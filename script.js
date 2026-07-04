@@ -176,13 +176,13 @@ function renderHome() {
       ${metricCard("👷", "green", "Workforce Development", "48 trainees", "Students and local participants trained")}
     </div>
 
-    <div class="alert">
-      <div>
-        <strong>Dashboard aligned to the KPI Framework slide</strong>
-        <p>This command center now follows the six KPI families exactly: Energy & Reliability, Community Impact, Economic Development, Financial Sustainability, Safety & Security, and Workforce Development.</p>
-      </div>
-      <button class="btn">KPI Framework Active</button>
-    </div>
+   <div class="alert">
+  <div>
+    <strong>Phase 1 Corridor Performance Snapshot</strong>
+    <p>PowerLink Ghana tracks whether reliable electricity is improving health services, education, local business activity, cold storage, safety, financial sustainability, and workforce capacity across the Tamale–Savelugu Opportunity Corridor.</p>
+  </div>
+  <button class="btn">View KPI Summary</button>
+</div>
 
     <div class="grid two-col">
       ${sectionCard(
