@@ -2,8 +2,8 @@ const pages = [
   {
     id: "home",
     icon: "⌂",
-    title: "Home",
-    subtitle: "Executive overview of the PowerLink Ghana 2050 energy access strategy",
+    title: "Home Dashboard",
+    subtitle: "PowerLink Ghana 2050 operating snapshot and strategic command center",
     status: "Stable",
     render: renderHome
   },
@@ -11,7 +11,7 @@ const pages = [
     id: "live",
     icon: "↯",
     title: "Live Operations",
-    subtitle: "Real-time monitoring of solar, battery, demand, and microgrid operations",
+    subtitle: "Real-time monitoring of solar, battery, demand, and facility power status",
     status: "All Regions",
     render: renderLive
   },
@@ -19,15 +19,15 @@ const pages = [
     id: "equity",
     icon: "☷",
     title: "Equity & Access",
-    subtitle: "Tracking energy access across underserved communities",
+    subtitle: "Tracking energy access, affordability, schools, clinics, water, and productive use",
     status: "Impact-first",
     render: renderEquity
   },
   {
     id: "resilience",
     icon: "🛡",
-    title: "Resilience",
-    subtitle: "Safety, backup power, weather readiness, and priority restoration",
+    title: "Resilience & Security",
+    subtitle: "Monitoring reliability, safety, backup power, weather readiness, and emergency response",
     status: "Zero major incidents",
     render: renderResilience
   },
@@ -35,23 +35,23 @@ const pages = [
     id: "decision",
     icon: "◎",
     title: "Decision Support",
-    subtitle: "Funding, feasibility, risks, and deployment recommendations",
-    status: "Judge-ready realism",
+    subtitle: "Priority recommendations for technical innovation, equity, resilience, climate impact, and feasibility",
+    status: "Action-ready",
     render: renderDecision
   },
   {
     id: "map",
     icon: "◇",
     title: "Map View",
-    subtitle: "Geographic view of priority hubs, facilities, and expansion corridors",
-    status: "Northern focus",
+    subtitle: "Geographic view of priority hubs, facility clusters, and expansion corridors",
+    status: "Northern Ghana focus",
     render: renderMap
   },
   {
     id: "dictionary",
     icon: "▣",
     title: "Data Dictionary",
-    subtitle: "Definitions, data sources, and measurement frequency for core KPIs",
+    subtitle: "Definitions, data sources, and monitoring frequency for dashboard KPIs",
     status: "KPI governed",
     render: renderDictionary
   },
@@ -59,23 +59,15 @@ const pages = [
     id: "scenario",
     icon: "⇄",
     title: "Scenario Comparison",
-    subtitle: "Compare pilot, expanded hub, and corridor expansion strategies",
-    status: "Decision matrix",
+    subtitle: "Before / current / 2050 comparison across reliability, access, affordability, resilience, and impact",
+    status: "Scenario model",
     render: renderScenario
-  },
-  {
-    id: "roadmap",
-    icon: "→",
-    title: "Implementation Roadmap",
-    subtitle: "0–3 years pilot, 3–10 years scale, and 10+ years sustain",
-    status: "2050 pathway",
-    render: renderRoadmap
   },
   {
     id: "about",
     icon: "ⓘ",
     title: "About the System",
-    subtitle: "PowerLink Ghana 2050 project summary, SDG alignment, and dashboard purpose",
+    subtitle: "PowerLink Ghana 2050 project summary, KPI logic, and SDG alignment",
     status: "TechnoSaints Nexus",
     render: renderAbout
   }
@@ -135,18 +127,18 @@ function badge(text, color = "green") {
 function renderHome() {
   return `
     <div class="grid kpi-grid">
-      ${metricCard("☀", "yellow", "Solar Generation", "742 kW", "Prototype operating assumption")}
+      ${metricCard("☀", "yellow", "Solar Generation", "742 kW", "Current modeled solar production")}
       ${metricCard("▭", "green", "Battery Reserve", "68%", "Storage available for priority loads")}
-      ${metricCard("⚡", "blue", "Microgrids Online", "78/80", "Long-term scale scenario")}
-      ${metricCard("▤", "purple", "Critical Facilities Powered", "96%", "Clinic, school, water, and hub loads")}
-      ${metricCard("☷", "green", "Households Connected", "120,000", "Long-term community access scenario")}
-      ${metricCard("♻", "green", "Emissions Avoided", "385,000 tons CO₂e", "Estimated lifetime avoided emissions")}
+      ${metricCard("⚡", "blue", "Microgrids Online", "78 / 80", "Long-term operating target")}
+      ${metricCard("▤", "purple", "Critical Facilities Powered", "96%", "Clinics, schools, water, and hub loads")}
+      ${metricCard("☷", "green", "Households Connected", "120,000", "2050 scale scenario")}
+      ${metricCard("♻", "green", "Emissions Avoided", "385,000 tCO₂e", "Estimated lifetime avoided emissions")}
     </div>
 
     <div class="alert">
       <div>
         <strong>Alert: Battery Reserve Below Target</strong>
-        <p>Northern Clinic Cluster battery reserve is below target. Recommended action: prioritize Phase 2 storage expansion.</p>
+        <p>Northern Clinic Cluster battery reserve is below target. Recommended action: prioritize Phase 2 storage expansion and reduce noncritical loads.</p>
       </div>
       <button class="btn">View Recommended Action</button>
     </div>
@@ -154,23 +146,62 @@ function renderHome() {
     <div class="grid two-col">
       <section class="card">
         <h3 class="panel-title">Implementation Roadmap 2026–2050</h3>
-        <p class="panel-subtitle">Projected clean energy transition progress</p>
+        <p class="panel-subtitle">Projected transition from pilot to regional clean energy system</p>
         ${lineChart()}
       </section>
 
       <section class="card">
-        <h3 class="panel-title">KPI Category Health</h3>
-        <p class="panel-subtitle">Dashboard focus areas tied to judging strength</p>
+        <h3 class="panel-title">Command Center Health</h3>
+        <p class="panel-subtitle">Operating readiness across the proposal’s six KPI families</p>
         ${progressList([
           ["Energy Reliability", "82"],
           ["Community Impact", "78"],
-          ["Safety & Resilience", "70"],
+          ["Safety & Resilience", "74"],
           ["Cost & Finance", "65"],
-          ["Environmental / SDG Impact", "74"],
+          ["Environmental / SDG Impact", "76"],
           ["Implementation Readiness", "72"]
         ])}
       </section>
     </div>
+
+    <section class="card" style="margin-top: 24px;">
+      <h3 class="panel-title">Current Operating Priorities</h3>
+      <p class="panel-subtitle">What the dashboard would tell the implementation team today</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Cluster</th>
+            <th>Issue</th>
+            <th>Recommended Action</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>Northern Clinic Cluster</td>
+            <td>Battery reserve below 20%</td>
+            <td>Reserve power for clinic loads and dispatch maintenance</td>
+            <td>${badge("High Priority", "red")}</td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>School + Water Hub</td>
+            <td>Evening demand rising</td>
+            <td>Shift noncritical loads and expand storage in Phase 2</td>
+            <td>${badge("Watch", "yellow")}</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>Productive Use Zone</td>
+            <td>Small business demand increasing</td>
+            <td>Evaluate load expansion after reliability target is maintained</td>
+            <td>${badge("Opportunity", "blue")}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   `;
 }
 
@@ -178,32 +209,70 @@ function renderLive() {
   return `
     <div class="grid kpi-grid">
       ${metricCard("☀", "yellow", "Current Solar Output", "742 kW", "Live generation estimate")}
-      ${metricCard("▭", "green", "Battery Storage Level", "55%", "Current reserve level")}
+      ${metricCard("▭", "green", "Battery Storage Level", "55%", "Current aggregate reserve")}
       ${metricCard("⚡", "blue", "Current Demand", "1,240 kW", "Active load across monitored hubs")}
-      ${metricCard("▤", "purple", "Facility Power Status", "28/28", "Critical facilities online")}
-      ${metricCard("🔧", "yellow", "Maintenance Status", "1 Active", "Open service issue")}
+      ${metricCard("▤", "purple", "Facility Power Status", "28 / 28", "Critical facilities currently powered")}
+      ${metricCard("🔧", "yellow", "Maintenance Status", "1 Active", "Open service work order")}
       ${metricCard("☔", "cyan", "Weather Risk", "Medium", "Heat, dust, rainfall, and storm exposure")}
     </div>
 
     <section class="card">
       <h3 class="panel-title">Microgrid Status</h3>
-      <p class="panel-subtitle">Real-time performance monitoring</p>
+      <p class="panel-subtitle">Operational status across monitored hub clusters</p>
       <table>
         <thead>
           <tr>
             <th>Microgrid</th>
             <th>Region</th>
             <th>Battery %</th>
-            <th>Status</th>
+            <th>Reserve Hours</th>
+            <th>Load Status</th>
             <th>Facilities Served</th>
+            <th>Status</th>
             <th>Recommended Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>MG-01</strong></td><td>Northern</td><td style="color:#16a34a;">▭ 72%</td><td>${badge("Stable", "green")}</td><td>7</td><td>Continue standard monitoring</td></tr>
-          <tr><td><strong>MG-02</strong></td><td>Coastal</td><td style="color:#f97316;">▭ 48%</td><td>${badge("Watch", "yellow")}</td><td>5</td><td>Review storage reserve trend</td></tr>
-          <tr><td><strong>MG-03</strong></td><td>Urban</td><td style="color:#16a34a;">▭ 82%</td><td>${badge("Stable", "green")}</td><td>10</td><td>Candidate for load expansion</td></tr>
-          <tr><td><strong>MG-04</strong></td><td>Northern Clinic</td><td style="color:#dc2626;">▭ 18%</td><td>${badge("Warning", "red")}</td><td>6</td><td>Dispatch battery support and reduce noncritical loads</td></tr>
+          <tr>
+            <td><strong>MG-01</strong></td>
+            <td>Northern Hub</td>
+            <td style="color:#16a34a;">▭ 72%</td>
+            <td>16.8 hrs</td>
+            <td>Normal</td>
+            <td>7</td>
+            <td>${badge("Stable", "green")}</td>
+            <td>Continue standard monitoring</td>
+          </tr>
+          <tr>
+            <td><strong>MG-02</strong></td>
+            <td>Coastal Resilience Cluster</td>
+            <td style="color:#f97316;">▭ 48%</td>
+            <td>9.6 hrs</td>
+            <td>Elevated evening demand</td>
+            <td>5</td>
+            <td>${badge("Watch", "yellow")}</td>
+            <td>Shift noncritical loads to daylight hours</td>
+          </tr>
+          <tr>
+            <td><strong>MG-03</strong></td>
+            <td>Urban Enterprise Cluster</td>
+            <td style="color:#16a34a;">▭ 82%</td>
+            <td>18.4 hrs</td>
+            <td>Normal</td>
+            <td>10</td>
+            <td>${badge("Stable", "green")}</td>
+            <td>Candidate for productive-use expansion</td>
+          </tr>
+          <tr>
+            <td><strong>MG-04</strong></td>
+            <td>Northern Clinic Cluster</td>
+            <td style="color:#dc2626;">▭ 18%</td>
+            <td>3.2 hrs</td>
+            <td>Priority load protection</td>
+            <td>6</td>
+            <td>${badge("Warning", "red")}</td>
+            <td>Reserve power for clinic loads and dispatch maintenance</td>
+          </tr>
         </tbody>
       </table>
     </section>
@@ -214,17 +283,17 @@ function renderEquity() {
   return `
     <div class="grid kpi-grid">
       ${metricCard("☷", "blue", "Rural Communities Served", "42", "Priority access communities")}
-      ${metricCard("🎓", "green", "Schools Powered", "220", "Long-term scale scenario")}
-      ${metricCard("♡", "red", "Clinics Powered", "140", "Long-term scale scenario")}
+      ${metricCard("🎓", "green", "Schools Powered", "220", "2050 scale scenario")}
+      ${metricCard("♡", "red", "Clinics Powered", "140", "2050 scale scenario")}
       ${metricCard("✦", "purple", "Girls Education STEM Centers", "18", "Education and workforce pathway")}
-      ${metricCard("$", "yellow", "Affordability Improvement", "31%", "Estimated energy burden improvement")}
-      ${metricCard("◷", "blue", "Evening Study Hours Added", "5.2", "Estimated additional study hours")}
+      ${metricCard("$", "yellow", "Affordability Improvement", "31%", "Estimated reduction in energy burden")}
+      ${metricCard("◷", "blue", "Evening Study Hours Added", "5.2", "Average additional study hours per day")}
     </div>
 
     <div class="alert info">
       <div>
         <strong>Priority Recommendation</strong>
-        <p>Northern Rural Cluster should receive Phase 2 storage expansion due to lower reliability and higher energy burden.</p>
+        <p>Northern Rural Cluster should receive Phase 2 storage expansion due to lower reliability, higher energy burden, and stronger school / clinic impact potential.</p>
         <div class="chips">
           <span class="chip">High Impact</span>
           <span class="chip">Rural Access</span>
@@ -246,31 +315,40 @@ function renderResilience() {
     <div class="grid kpi-grid">
       ${metricCard("🛡", "green", "Backup Power Coverage", "94%", "Critical facilities with backup support")}
       ${metricCard("▭", "blue", "Battery Hours Remaining", "14.2", "Average priority-load autonomy")}
-      ${metricCard("◷", "purple", "Outage Response Target", "Under 4 hrs", "Service restoration target")}
+      ${metricCard("◷", "purple", "Outage Response Target", "Under 4 hours", "Restoration response target")}
       ${metricCard("🔒", "blue", "Cybersecurity Readiness", "84%", "Monitoring and data integrity controls")}
       ${metricCard("☔", "cyan", "Extreme Weather Readiness", "90%", "Storm, heat, and environmental exposure planning")}
-      ${metricCard("✓", "green", "Safety Incidents Target", "0", "Zero major incidents")}
+      ${metricCard("✓", "green", "Inspection Completion", "Monthly", "Safety and O&M checklist")}
     </div>
 
     <div class="grid two-col">
       <section class="card">
         <h3 class="panel-title">Active Risk Monitoring</h3>
-        <p class="panel-subtitle">Current system threats and alerts</p>
-        <div class="mini-list">
-          <div class="mini-item" style="background:#fee2e2;"><strong>⚠ Low Battery Reserve</strong><p>High priority risk for Northern Clinic Cluster.</p></div>
-          <div class="mini-item" style="background:#fef3c7;"><strong>⚠ Storm Risk</strong><p>Medium risk; monitor forecast and secure exposed equipment.</p></div>
-          <div class="mini-item" style="background:#dcfce7;"><strong>△ Cybersecurity Alert</strong><p>Low risk; continue routine access and data review.</p></div>
+        <p class="panel-subtitle">Current system threats and operating alerts</p>
+        <div class="risk-list">
+          <div class="risk-row risk-high">
+            <strong>⚠ Low Battery Reserve</strong>
+            <span>High</span>
+          </div>
+          <div class="risk-row risk-medium">
+            <strong>⚠ Storm Risk</strong>
+            <span>Medium</span>
+          </div>
+          <div class="risk-row risk-low">
+            <strong>△ Cybersecurity Alert</strong>
+            <span>Low</span>
+          </div>
         </div>
       </section>
 
       <section class="card">
         <h3 class="panel-title">Critical Facility Priority Stack</h3>
-        <p class="panel-subtitle">Power restoration priority order</p>
-        <div class="mini-list">
-          <div class="mini-item"><strong>1. Clinics and vaccine refrigeration</strong><p>Highest priority health and safety load.</p></div>
-          <div class="mini-item"><strong>2. Schools</strong><p>Learning continuity and community support.</p></div>
-          <div class="mini-item"><strong>3. Water and community hubs</strong><p>Public health and daily life stability.</p></div>
-          <div class="mini-item"><strong>4. Small business and agriculture</strong><p>Productive use and local economic continuity.</p></div>
+        <p class="panel-subtitle">Power restoration and load protection order</p>
+        <div class="priority-stack">
+          <div class="stack-row"><span>1</span><strong>Clinics and vaccine refrigeration</strong></div>
+          <div class="stack-row"><span>2</span><strong>Schools</strong></div>
+          <div class="stack-row"><span>3</span><strong>Water and community hubs</strong></div>
+          <div class="stack-row"><span>4</span><strong>Small business and agriculture</strong></div>
         </div>
       </section>
     </div>
@@ -279,40 +357,54 @@ function renderResilience() {
 
 function renderDecision() {
   return `
-    <div class="grid kpi-grid">
-      ${metricCard("$", "yellow", "Funding Readiness", "65%", "Grant, DFI, public/private, local partner mix")}
-      ${metricCard("⌖", "blue", "Site Readiness", "85%", "Community and load model defined")}
-      ${metricCard("▤", "yellow", "Permitting Readiness", "In Progress", "Environmental, utility, local authority")}
-      ${metricCard("🛒", "green", "Procurement Readiness", "Planned", "PV, battery, controls, interconnection gear")}
-      ${metricCard("🔧", "cyan", "O&M Readiness", "Drafted", "Inspection, spares, escalation, reserve planning")}
-      ${metricCard("▣", "purple", "Overall Readiness Score", "72%", "Composite implementation readiness")}
+    <div class="decision-tabs">
+      <span class="decision-chip blue-chip">Technical Innovation</span>
+      <span class="decision-chip purple-chip">Equity Access</span>
+      <span class="decision-chip green-chip">Resilience Security</span>
+      <span class="decision-chip cyan-chip">Climate Impact</span>
+      <span class="decision-chip neutral-chip">Feasibility</span>
     </div>
 
-    <div class="grid two-col">
-      <section class="card">
-        <h3 class="panel-title">Funding Stack</h3>
-        <p class="panel-subtitle">Blended finance pathway for implementation</p>
-        <div class="mini-list">
-          <div class="mini-item"><strong>Grants</strong><p>Climate funds, education funds, energy access grants, and philanthropic support.</p></div>
-          <div class="mini-item"><strong>Development Finance</strong><p>DFIs, concessional lending, AfDB-style pathways, and public-private investment.</p></div>
-          <div class="mini-item"><strong>Public / Private Partners</strong><p>Government, utility, schools, clinics, vendors, and technology partners.</p></div>
-          <div class="mini-item"><strong>O&M Reserve</strong><p>Maintenance fund, replacement planning, and technology refresh reserve.</p></div>
+    <section class="priority-card high-priority">
+      <div class="priority-label">High Priority</div>
+      <div class="priority-body">
+        <div class="icon red">▭</div>
+        <div>
+          <h3>Northern Clinic Cluster</h3>
+          <p>Battery below 20%; reserve power for clinic operations and dispatch maintenance.</p>
+          <div class="mini-metrics">
+            <div><span>Battery Level</span><strong>18%</strong></div>
+            <div><span>Response Time</span><strong>&lt; 2 hours</strong></div>
+          </div>
+          <div class="chips">
+            <span class="chip">Resilience Security</span>
+            <span class="chip">Technical Innovation</span>
+          </div>
         </div>
-      </section>
+        <button class="btn">Review Details</button>
+      </div>
+    </section>
 
-      <section class="card">
-        <h3 class="panel-title">Decision Matrix</h3>
-        <p class="panel-subtitle">Realism indicators tied to project planning</p>
-        ${progressList([
-          ["Site + Load Assessment", "85"],
-          ["Community Alignment", "80"],
-          ["Permitting Path", "58"],
-          ["Equipment Procurement", "62"],
-          ["Training Plan", "70"],
-          ["Maintenance Reserve", "55"]
-        ])}
-      </section>
-    </div>
+    <section class="priority-card medium-priority">
+      <div class="priority-label">Medium Priority</div>
+      <div class="priority-body">
+        <div class="icon yellow">☔</div>
+        <div>
+          <h3>Coastal Resilience Cluster</h3>
+          <p>Weather risk increasing; increase evening battery reserve and shift noncritical loads.</p>
+          <div class="mini-metrics">
+            <div><span>Storm Risk</span><strong>Medium</strong></div>
+            <div><span>Action Window</span><strong>24–48 hours</strong></div>
+          </div>
+          <div class="chips">
+            <span class="chip">Resilience Security</span>
+            <span class="chip">Climate Impact</span>
+            <span class="chip">Technical Innovation</span>
+          </div>
+        </div>
+        <button class="btn">Review Details</button>
+      </div>
+    </section>
   `;
 }
 
@@ -320,35 +412,27 @@ function renderMap() {
   return `
     <div class="grid two-col">
       <section class="card map-panel">
-        <h3 class="panel-title">Ghana Priority Hub Map</h3>
-        <p class="panel-subtitle">Illustrative map view for resilience hubs and expansion corridors</p>
-        <div class="map-visual">
-          <span class="map-marker marker-1" title="Northern Ghana Hub"></span>
-          <span class="map-marker marker-2" title="Water + School Cluster"></span>
-          <span class="map-marker marker-3" title="Community Enterprise Hub"></span>
-          <span class="map-marker marker-4" title="Clinic Cluster Risk"></span>
+        <h3 class="panel-title">Ghana Energy Access Map</h3>
+        <p class="panel-subtitle">Illustrative priority-zone map for resilience hubs and expansion corridors</p>
 
-          <div class="card map-card">
-            <h3 class="panel-title">Northern Ghana Priority Zone</h3>
-            <p class="panel-subtitle">Tamale-centered resilience and productive-use energy strategy</p>
-            <div class="chips">
-              <span class="chip">Clinic</span>
-              <span class="chip">School</span>
-              <span class="chip">Water</span>
-              <span class="chip">Enterprise</span>
-            </div>
-          </div>
+        <div class="map-visual">
+          <div class="ghana-shape"></div>
+
+          <div class="map-marker marker-north"><span></span><strong>Northern Hub</strong></div>
+          <div class="map-marker marker-clinic"><span></span><strong>Clinic Cluster</strong></div>
+          <div class="map-marker marker-school"><span></span><strong>School + Water Hub</strong></div>
+          <div class="map-marker marker-enterprise"><span></span><strong>Enterprise Zone</strong></div>
         </div>
       </section>
 
       <section class="card">
-        <h3 class="panel-title">Regional Overlay</h3>
-        <p class="panel-subtitle">How the map supports decision-making</p>
+        <h3 class="panel-title">Regional Operating Overlay</h3>
+        <p class="panel-subtitle">How the map supports deployment decisions</p>
         <div class="mini-list">
-          <div class="mini-item"><strong>Reliability Score</strong><p>Identifies areas with high outage burden and critical-load vulnerability.</p></div>
-          <div class="mini-item"><strong>Access Gap</strong><p>Highlights communities where clinics, schools, water systems, and enterprise loads need stronger power support.</p></div>
-          <div class="mini-item"><strong>Readiness Score</strong><p>Combines site access, stakeholder alignment, permitting, and procurement feasibility.</p></div>
-          <div class="mini-item"><strong>Expansion Corridor</strong><p>Shows how a proven pilot can scale into a regional hub model.</p></div>
+          <div class="mini-item"><strong>Northern Ghana Priority Zone</strong><p>Highest pilot value because it combines rural access, clinic reliability, education impact, and productive-use needs.</p></div>
+          <div class="mini-item"><strong>Clinic Cluster Risk</strong><p>Battery reserve and outage risk drive the first action recommendation.</p></div>
+          <div class="mini-item"><strong>School + Water Hub</strong><p>Best combined social-return cluster for evening learning and public health benefits.</p></div>
+          <div class="mini-item"><strong>Expansion Corridor</strong><p>Validated pilot hubs can scale into a corridor-to-region deployment strategy.</p></div>
         </div>
       </section>
     </div>
@@ -357,28 +441,30 @@ function renderMap() {
 
 function renderDictionary() {
   const rows = [
-    ["Critical Load Uptime", "Percent of time priority loads remain powered.", "Reliability", "Sensors / outage logs", "Daily"],
+    ["Critical Load Uptime", "Percent of time priority loads remain powered.", "Energy Reliability", "Sensors / outage logs", "Daily"],
     ["Battery Reserve", "Available storage compared with usable storage capacity.", "Resilience", "Battery monitoring", "Hourly"],
-    ["Solar Output", "Current or estimated photovoltaic generation.", "Reliability", "Inverter / meter data", "Hourly"],
-    ["Outage Hours Avoided", "Estimated outage time reduced by solar + storage.", "Reliability", "Grid logs + system data", "Monthly"],
+    ["Battery Autonomy", "Estimated hours the system can support priority loads.", "Resilience", "Load model + storage data", "Hourly"],
+    ["Solar Output", "Current or estimated photovoltaic generation.", "Energy Reliability", "Inverter / meter data", "Hourly"],
+    ["Outage Hours Avoided", "Estimated outage time reduced by solar + storage.", "Energy Reliability", "Grid logs + system data", "Monthly"],
     ["Clinics Powered", "Number of clinics served by reliable energy.", "Community Impact", "Facility records", "Monthly"],
     ["Schools Powered", "Number of schools served by reliable energy.", "Community Impact", "Facility records", "Monthly"],
     ["Water Access Reliability", "Availability of energy for water pumping or treatment.", "Community Impact", "Pump runtime", "Daily"],
-    ["Funding Readiness", "Progress toward viable funding and partnership package.", "Finance", "Project records", "Monthly"],
+    ["Funding Readiness", "Progress toward viable funding and partnership package.", "Cost & Finance", "Project records", "Monthly"],
     ["Permitting Readiness", "Progress through environmental, utility, and local approvals.", "Implementation", "Permit tracker", "Monthly"],
-    ["CO₂ Avoided", "Estimated emissions displaced by clean power.", "Environmental", "Energy model", "Monthly"]
+    ["Procurement Readiness", "Progress toward equipment selection and purchasing release.", "Implementation", "Procurement tracker", "Monthly"],
+    ["CO₂ Avoided", "Estimated emissions displaced by clean power.", "Environmental / SDG", "Energy model", "Monthly"]
   ];
 
   return `
     <section class="card">
       <h3 class="panel-title">KPI Data Dictionary</h3>
-      <p class="panel-subtitle">Definitions, categories, sources, and frequency</p>
+      <p class="panel-subtitle">Definitions, categories, sources, and update frequency</p>
       <table>
         <thead>
           <tr>
             <th>Metric</th>
             <th>Definition</th>
-            <th>Category</th>
+            <th>KPI Family</th>
             <th>Data Source</th>
             <th>Frequency</th>
           </tr>
@@ -401,141 +487,28 @@ function renderDictionary() {
 
 function renderScenario() {
   return `
-    <div class="grid scenario-grid">
-      <section class="card scenario-card">
-        <h3>Scenario A</h3>
-        <p class="panel-subtitle">Pilot Hub Only</p>
-        <div class="scenario-score">72</div>
-        <p class="subtext">Best for proving technical feasibility and collecting baseline data.</p>
-        <div class="chips">
-          <span class="chip">Lower Cost</span>
-          <span class="chip">Lower Risk</span>
-        </div>
-      </section>
+    <div class="alert info">
+      <div>
+        <strong>Before / Current / 2050 Scenario Comparison</strong>
+        <p>This view compares historical baseline conditions, current progress, and the team’s proposed future energy system.</p>
+      </div>
+    </div>
 
-      <section class="card scenario-card">
-        <h3>Scenario B</h3>
-        <p class="panel-subtitle">Hub + Expanded Community Loads</p>
-        <div class="scenario-score">86</div>
-        <p class="subtext">Best balance of impact, realism, and judge-facing proof of community value.</p>
-        <div class="chips">
-          <span class="chip">Recommended</span>
-          <span class="chip">High Impact</span>
-        </div>
-      </section>
-
-      <section class="card scenario-card">
-        <h3>Scenario C</h3>
-        <p class="panel-subtitle">Corridor Expansion</p>
-        <div class="scenario-score">80</div>
-        <p class="subtext">Best for long-term scale once the pilot model is validated.</p>
-        <div class="chips">
-          <span class="chip">Scalable</span>
-          <span class="chip">Higher Funding Need</span>
-        </div>
-      </section>
+    <div class="grid three-col">
+      ${scenarioSummary("2000 Baseline", "Historical baseline before major clean energy initiatives", "45%", "gray")}
+      ${scenarioSummary("2026 Current State", "Current system performance and infrastructure status", "78%", "blue")}
+      ${scenarioSummary("2050 Proposed System", "Proposed target state with full implementation", "98%", "green")}
     </div>
 
     <section class="card" style="margin-top: 24px;">
-      <h3 class="panel-title">Scenario Comparison Matrix</h3>
-      <p class="panel-subtitle">Compares cost, reliability, community impact, risk, and scalability</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Scenario</th>
-            <th>CAPEX</th>
-            <th>Reliability</th>
-            <th>Community Impact</th>
-            <th>Risk</th>
-            <th>Scalability</th>
-            <th>Readiness</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>A: Pilot Hub Only</strong></td><td>Low</td><td>Medium</td><td>Medium</td><td>Low</td><td>Medium</td><td>${badge("High", "green")}</td></tr>
-          <tr><td><strong>B: Hub + Expanded Loads</strong></td><td>Medium</td><td>High</td><td>High</td><td>Medium</td><td>High</td><td>${badge("Recommended", "blue")}</td></tr>
-          <tr><td><strong>C: Corridor Expansion</strong></td><td>High</td><td>High</td><td>Very High</td><td>High</td><td>Very High</td><td>${badge("Future Phase", "yellow")}</td></tr>
-        </tbody>
-      </table>
+      <h3 class="panel-title">Metric Comparison Across Scenarios</h3>
+      <p class="panel-subtitle">Energy access, reliability, affordability, resilience, and impact</p>
+      ${comparisonBars("Energy Access", "45", "78", "98", "% Population")}
+      ${comparisonBars("Reliability", "52", "82", "96", "% Uptime")}
+      ${comparisonBars("Affordability", "40", "68", "88", "Index Score")}
+      ${comparisonBars("Critical Facility Coverage", "38", "76", "96", "% Facilities")}
+      ${comparisonBars("Clean Energy Share", "22", "58", "92", "% Renewable")}
     </section>
-  `;
-}
-
-function renderRoadmap() {
-  return `
-    <div class="grid roadmap">
-      <article class="phase-card pilot">
-        <div class="phase-head"><span class="phase-num">1</span> 0–3 Years</div>
-        <h3>Pilot</h3>
-        <h4>Prove the Model</h4>
-        <ul>
-          <li>Finalize site selection and load assessment</li>
-          <li>Voice of Customer and stakeholder alignment</li>
-          <li>Financing package design: grants, DFIs, local partners</li>
-          <li>Permitting path: environmental, utility, local authority</li>
-          <li>Equipment procurement plan: PV, batteries, controls, interconnection gear</li>
-          <li>Contractor selection and implementation schedule</li>
-          <li>Baseline KPI dashboard and risk register</li>
-        </ul>
-        <div class="gate">
-          <strong>Milestone Gates</strong>
-          <ul>
-            <li>Feasibility approved</li>
-            <li>Funding commitments secured</li>
-            <li>Major permits submitted or in process</li>
-            <li>First hub procurement released</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="phase-card scale">
-        <div class="phase-head"><span class="phase-num">2</span> 3–10 Years</div>
-        <h3>Scale</h3>
-        <h4>Replicate What Works</h4>
-        <ul>
-          <li>Expand to additional schools, clinics, and water assets</li>
-          <li>Phase 2 financing: blended capital, concessional debt, reinvested savings</li>
-          <li>Bulk equipment procurement to reduce unit cost</li>
-          <li>Standardize designs, BoQ, and contractor packages</li>
-          <li>Workforce pipeline and local technician training</li>
-          <li>Strengthen O&M model, spare parts, and service contracts</li>
-          <li>KPI-driven improvement across new sites</li>
-        </ul>
-        <div class="gate">
-          <strong>Milestone Gates</strong>
-          <ul>
-            <li>Multiple hubs commissioned</li>
-            <li>Cost per site reduced</li>
-            <li>O&M program operational</li>
-            <li>Regional deployment model validated</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="phase-card sustain">
-        <div class="phase-head"><span class="phase-num">3</span> 10+ Years</div>
-        <h3>Sustain</h3>
-        <h4>Build Long-Term Energy Independence</h4>
-        <ul>
-          <li>Transition to community-led ownership and governance</li>
-          <li>Establish maintenance reserve and replacement planning</li>
-          <li>Long-term tariff, revenue, and financial sustainability review</li>
-          <li>Technology refresh cycles for batteries, inverters, and monitoring</li>
-          <li>Continued compliance, audits, and resilience upgrades</li>
-          <li>Expand corridor-to-region strategy using proven model</li>
-          <li>Use dashboard evidence to attract next-wave investment</li>
-        </ul>
-        <div class="gate">
-          <strong>Milestone Gates</strong>
-          <ul>
-            <li>Long-term reserve funded</li>
-            <li>Local ownership active</li>
-            <li>Technology refresh planned</li>
-            <li>Expansion pipeline financed</li>
-          </ul>
-        </div>
-      </article>
-    </div>
   `;
 }
 
@@ -545,8 +518,6 @@ function renderAbout() {
       <section class="card">
         <h3 class="panel-title">Project Purpose</h3>
         <p>The PowerLink Ghana 2050 Command Center is a student-built dashboard prototype for the Girls With Energy Challenge. It shows how solar generation, battery storage, smart monitoring, funding readiness, and community-centered design can support reliable energy access in Ghana.</p>
-
-        <p>The dashboard is designed around measurable proof: reliability, impact, safety, finance, environment, and implementation readiness.</p>
 
         <div class="alert info" style="margin-top: 18px;">
           <div>
@@ -559,30 +530,15 @@ function renderAbout() {
       <section class="card">
         <h3 class="panel-title">KPI Families</h3>
         <div class="mini-list">
-          <div class="mini-item"><strong>Energy Reliability</strong><p>Uptime, battery autonomy, outage hours avoided, load served.</p></div>
-          <div class="mini-item"><strong>Community Impact</strong><p>Clinics, schools, water access, productive use, rural communities.</p></div>
-          <div class="mini-item"><strong>Safety & Resilience</strong><p>Safety incidents, weather readiness, backup hours, priority restoration.</p></div>
-          <div class="mini-item"><strong>Cost & Finance</strong><p>CAPEX, OPEX, funding readiness, maintenance reserve, cost per beneficiary.</p></div>
-          <div class="mini-item"><strong>Environmental / SDG Impact</strong><p>CO₂ avoided, renewable share, diesel avoided, SDG alignment.</p></div>
-          <div class="mini-item"><strong>Implementation Readiness</strong><p>Site assessment, permitting, procurement, training, O&M, risk register.</p></div>
+          <div class="mini-item"><strong>Energy Reliability</strong><p>Uptime, battery autonomy, outage hours avoided, solar output, and priority load served.</p></div>
+          <div class="mini-item"><strong>Community Impact</strong><p>Clinics, schools, water access, productive use, and rural communities served.</p></div>
+          <div class="mini-item"><strong>Safety & Resilience</strong><p>Safety incidents, weather readiness, backup hours, cybersecurity, and restoration priority.</p></div>
+          <div class="mini-item"><strong>Cost & Finance</strong><p>CAPEX, OPEX, funding readiness, maintenance reserve, and procurement readiness.</p></div>
+          <div class="mini-item"><strong>Environmental / SDG Impact</strong><p>CO₂ avoided, renewable share, diesel avoided, and SDG alignment.</p></div>
+          <div class="mini-item"><strong>Implementation Readiness</strong><p>Site assessment, permitting, procurement, training, O&M model, and risk register.</p></div>
         </div>
       </section>
     </div>
-
-    <section class="card" style="margin-top: 24px;">
-      <h3 class="panel-title">SDG Alignment</h3>
-      <p class="panel-subtitle">Development goals supported by the PowerLink Ghana 2050 strategy</p>
-      <div class="grid sdg-grid">
-        <div class="sdg"><strong>SDG 3</strong>Health and Well-Being</div>
-        <div class="sdg"><strong>SDG 4</strong>Quality Education</div>
-        <div class="sdg"><strong>SDG 6</strong>Clean Water and Sanitation</div>
-        <div class="sdg"><strong>SDG 7</strong>Affordable and Clean Energy</div>
-        <div class="sdg"><strong>SDG 8</strong>Decent Work and Economic Growth</div>
-        <div class="sdg"><strong>SDG 9</strong>Industry, Innovation, and Infrastructure</div>
-        <div class="sdg"><strong>SDG 13</strong>Climate Action</div>
-        <div class="sdg"><strong>SDG 17</strong>Partnerships for the Goals</div>
-      </div>
-    </section>
   `;
 }
 
@@ -660,6 +616,39 @@ function barChart() {
           <text x="835" y="242">Small Business</text>
         </g>
       </svg>
+    </div>
+  `;
+}
+
+function scenarioSummary(title, text, value, color) {
+  return `
+    <section class="card scenario-summary ${color}">
+      <h3>${title}</h3>
+      <p>${text}</p>
+      <strong>${value}</strong>
+    </section>
+  `;
+}
+
+function comparisonBars(metric, base, current, future, unit) {
+  return `
+    <div class="comparison-block">
+      <div class="comparison-header">
+        <strong>${metric}</strong>
+        <span>${unit}</span>
+      </div>
+      <div class="comparison-row">
+        <span>2000</span>
+        <div class="comparison-track"><div class="comparison-fill gray-fill" style="width:${base}%">${base}%</div></div>
+      </div>
+      <div class="comparison-row">
+        <span>2026</span>
+        <div class="comparison-track"><div class="comparison-fill blue-fill" style="width:${current}%">${current}%</div></div>
+      </div>
+      <div class="comparison-row">
+        <span>2050</span>
+        <div class="comparison-track"><div class="comparison-fill green-fill" style="width:${future}%">${future}%</div></div>
+      </div>
     </div>
   `;
 }
