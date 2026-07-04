@@ -10,16 +10,16 @@ const pages = [
   {
     id: "energy",
     icon: "⚡",
-    title: "Live Operations",
-    subtitle: "Energy & Reliability — monitoring power generation, storage, uptime, and critical loads",
+    title: "Energy & Reliability",
+    subtitle: "Ensuring power is available when communities need it",
     status: "Operational",
     render: renderEnergy
   },
   {
     id: "community",
-    icon: "☷",
+    icon: "🏥",
     title: "Community Impact",
-    subtitle: "Measuring how reliable electricity improves education, healthcare, access, and quality of life",
+    subtitle: "Measuring improvements in daily life",
     status: "Impact Tracking",
     render: renderCommunity
   },
@@ -27,7 +27,7 @@ const pages = [
     id: "economic",
     icon: "↗",
     title: "Economic Development",
-    subtitle: "Tracking productive-use energy, business activity, cold storage, and income effects",
+    subtitle: "Turning energy access into opportunity",
     status: "Growth Enabled",
     render: renderEconomic
   },
@@ -35,7 +35,7 @@ const pages = [
     id: "finance",
     icon: "$",
     title: "Financial Sustainability",
-    subtitle: "Monitoring costs, funding, collections, cost recovery, and long-term viability",
+    subtitle: "Building a system that can last",
     status: "Budget Managed",
     render: renderFinance
   },
@@ -43,7 +43,7 @@ const pages = [
     id: "safety",
     icon: "🛡",
     title: "Safety & Security",
-    subtitle: "Protecting people, equipment, systems, and data",
+    subtitle: "Protecting people, equipment, and data",
     status: "Compliant",
     render: renderSafety
   },
@@ -51,7 +51,7 @@ const pages = [
     id: "workforce",
     icon: "👷",
     title: "Workforce Development",
-    subtitle: "Tracking local training, certifications, participation, and technical capacity",
+    subtitle: "Creating local capacity for long-term success",
     status: "Capacity Building",
     render: renderWorkforce
   },
@@ -59,7 +59,7 @@ const pages = [
     id: "map",
     icon: "◇",
     title: "Map View",
-    subtitle: "Tamale–Savelugu Opportunity Corridor deployment geography and site clusters",
+    subtitle: "Tamale–Savelugu Opportunity Corridor site clusters",
     status: "Corridor Focus",
     render: renderMap
   },
@@ -67,7 +67,7 @@ const pages = [
     id: "dictionary",
     icon: "▣",
     title: "Data Dictionary",
-    subtitle: "Definitions, sources, and reporting cadence for all KPIs",
+    subtitle: "Definitions, sources, and reporting cadence for KPIs",
     status: "KPI Controlled",
     render: renderDictionary
   },
@@ -75,7 +75,7 @@ const pages = [
     id: "scenario",
     icon: "⇄",
     title: "Scenario Comparison",
-    subtitle: "Baseline vs current vs Phase 1 corridor target",
+    subtitle: "Baseline vs current vs Phase 1 target",
     status: "Scenario Model",
     render: renderScenario
   },
@@ -83,7 +83,7 @@ const pages = [
     id: "about",
     icon: "ⓘ",
     title: "About the System",
-    subtitle: "What this dashboard measures and why it matters",
+    subtitle: "What the dashboard measures and why it matters",
     status: "PowerLink Ghana 2050",
     render: renderAbout
   }
@@ -175,19 +175,19 @@ function comparisonBars(metric, baseline, current, target, unit) {
       <div class="comparison-row">
         <span>Baseline</span>
         <div class="comparison-track">
-          <div class="comparison-fill gray-fill" style="width:${baseline}%">${baseline}%</div>
+          <div class="comparison-fill gray-fill" style="width:${baseline}%">${baseline}${unit === "%" ? "%" : ""}</div>
         </div>
       </div>
       <div class="comparison-row">
         <span>Current</span>
         <div class="comparison-track">
-          <div class="comparison-fill blue-fill" style="width:${current}%">${current}%</div>
+          <div class="comparison-fill blue-fill" style="width:${current}%">${current}${unit === "%" ? "%" : ""}</div>
         </div>
       </div>
       <div class="comparison-row">
         <span>Phase 1 Target</span>
         <div class="comparison-track">
-          <div class="comparison-fill green-fill" style="width:${target}%">${target}%</div>
+          <div class="comparison-fill green-fill" style="width:${target}%">${target}${unit === "%" ? "%" : ""}</div>
         </div>
       </div>
     </div>
@@ -197,146 +197,158 @@ function comparisonBars(metric, baseline, current, target, unit) {
 function renderHome() {
   return `
     <div class="grid kpi-grid">
-      ${metricCard("⚡", "yellow", "Energy & Reliability", "99.1%", "System uptime across Phase 1 corridor assets")}
-      ${metricCard("🏥", "green", "Community Impact", "13 sites", "4 clinics/CHPS + 6 schools + 3 water systems")}
-      ${metricCard("↗", "blue", "Economic Development", "28 businesses", "Businesses supported with reliable electricity")}
-      ${metricCard("$", "purple", "Financial Sustainability", "$18.5M", "Base Phase 1 corridor budget")}
-      ${metricCard("🛡", "cyan", "Safety & Security", "0 incidents", "No major safety incidents reported")}
-      ${metricCard("👷", "green", "Workforce Development", "48 trainees", "Students and local participants trained")}
+      ${metricCard("⚡", "yellow", "System Uptime", "99.1%", "Energy & Reliability")}
+      ${metricCard("🏥", "green", "Clinic Service Hours Supported", "1,120 hrs/mo", "Community Impact")}
+      ${metricCard("↗", "blue", "Businesses Powered", "28", "Economic Development")}
+      ${metricCard("$", "purple", "Funding Leveraged", "$6.4M", "Financial Sustainability")}
+      ${metricCard("🛡", "cyan", "Inspection Compliance", "100%", "Safety & Security")}
+      ${metricCard("👷", "green", "Students Trained", "48", "Workforce Development")}
     </div>
 
     <div class="alert">
       <div>
-        <strong>Phase 1 Scope: Tamale–Savelugu Opportunity Corridor</strong>
-        <p>This dashboard reflects a realistic first-phase corridor deployment focused on critical services, productive-use energy, and measurable community outcomes — not a national rollout.</p>
+        <strong>Phase 1 Corridor Scope</strong>
+        <p>This dashboard is intentionally sized to a realistic first-phase deployment in the Tamale–Savelugu Opportunity Corridor: 4 clinic/health sites, 6 schools, 3 water systems, productive-use support, and a measurable local workforce pipeline.</p>
       </div>
-      <button class="btn">View Corridor Plan</button>
+      <button class="btn">View Phase 1 Scope</button>
     </div>
 
     <div class="grid two-col">
       ${sectionCard(
+        "KPI Framework Summary",
+        "The six dashboard families directly match the project KPI slide",
+        `
+        <table>
+          <thead>
+            <tr>
+              <th>KPI Family</th>
+              <th>Example Dashboard Metrics</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Energy & Reliability</strong></td>
+              <td>Solar energy generated, battery state of charge, system uptime, critical load availability, outage hours avoided</td>
+            </tr>
+            <tr>
+              <td><strong>2. Community Impact</strong></td>
+              <td>Students served, clinic service hours supported, refrigeration availability, households connected, community satisfaction</td>
+            </tr>
+            <tr>
+              <td><strong>3. Economic Development</strong></td>
+              <td>Businesses powered, productive-use equipment hours, cold storage utilization, estimated income impact, jobs created</td>
+            </tr>
+            <tr>
+              <td><strong>4. Financial Sustainability</strong></td>
+              <td>Cost per kWh, revenue collection, cost recovery, maintenance cost trend, funding leveraged</td>
+            </tr>
+            <tr>
+              <td><strong>5. Safety & Security</strong></td>
+              <td>Electrical safety incidents, battery safety events, cybersecurity alerts, inspection compliance, operator training completion</td>
+            </tr>
+            <tr>
+              <td><strong>6. Workforce Development</strong></td>
+              <td>Students trained, women participating, certifications earned, local technicians trained, community workshops delivered</td>
+            </tr>
+          </tbody>
+        </table>
+        `
+      )}
+
+      ${sectionCard(
         "Phase 1 Budget Snapshot",
-        "Realistic base budget for a corridor-scale deployment",
+        "Realistic corridor-scale deployment budget",
         `
         <table>
           <thead>
             <tr>
               <th>Budget Category</th>
               <th>Allocation</th>
-              <th>Purpose</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Solar generation + BOS</td><td><strong>$5.2M</strong></td><td>PV arrays, mounting, inverter systems, electrical BOS</td></tr>
-            <tr><td>Battery storage</td><td><strong>$4.1M</strong></td><td>Battery systems, controls, and resilience reserve</td></tr>
-            <tr><td>Distribution / interconnection</td><td><strong>$2.3M</strong></td><td>Distribution upgrades, wiring, and corridor connections</td></tr>
-            <tr><td>Controls + monitoring + cyber</td><td><strong>$1.2M</strong></td><td>Smart monitoring, dashboard integration, cybersecurity</td></tr>
-            <tr><td>School / clinic / water upgrades</td><td><strong>$2.6M</strong></td><td>Priority-load infrastructure at corridor facilities</td></tr>
-            <tr><td>Productive-use support</td><td><strong>$1.3M</strong></td><td>Cold storage, agro-processing, microenterprise support</td></tr>
-            <tr><td>Workforce development</td><td><strong>$0.8M</strong></td><td>Training, certifications, and community capacity</td></tr>
-            <tr><td>Permitting / PM / contingency</td><td><strong>$1.0M</strong></td><td>Approvals, project management, reserve contingency</td></tr>
+            <tr><td>Solar generation + BOS</td><td><strong>$5.2M</strong></td></tr>
+            <tr><td>Battery storage</td><td><strong>$4.1M</strong></td></tr>
+            <tr><td>Distribution / interconnection</td><td><strong>$2.3M</strong></td></tr>
+            <tr><td>Controls + monitoring + cyber</td><td><strong>$1.2M</strong></td></tr>
+            <tr><td>School / clinic / water upgrades</td><td><strong>$2.6M</strong></td></tr>
+            <tr><td>Productive-use support</td><td><strong>$1.3M</strong></td></tr>
+            <tr><td>Workforce development</td><td><strong>$0.8M</strong></td></tr>
+            <tr><td>Permitting / PM / contingency</td><td><strong>$1.0M</strong></td></tr>
           </tbody>
         </table>
         <div style="margin-top:16px;">
           <strong>Total Base Budget: $18.5M</strong><br>
-          <span class="subtext">Potential climate-finance upside: +$6.0M to +$7.5M for resilience expansion, emissions tracking, and additional storage.</span>
+          <span class="subtext">Potential climate finance upside: +$6.0M to +$7.5M for added resilience, additional storage, and longer-term monitoring.</span>
         </div>
         `
       )}
-
-      ${sectionCard(
-        "KPI Readiness",
-        "How prepared the corridor is for measured deployment",
-        progressList([
-          ["Site & Load Assessment", "82"],
-          ["Stakeholder / VoC Alignment", "78"],
-          ["Technical Design", "74"],
-          ["Funding Readiness", "69"],
-          ["Permitting Pathway", "58"],
-          ["O&M / Training Plan", "71"]
-        ])
-      )}
     </div>
-
-    <section class="card" style="margin-top:24px;">
-      <h3 class="panel-title">Why this dashboard matters</h3>
-      <p class="panel-subtitle">Power generation is the output. Community impact is the outcome.</p>
-      <div class="mini-list">
-        <div class="mini-item">
-          <strong>We measure both technical performance and human outcomes.</strong>
-          <p>The dashboard is built to prove not just that the system produces electricity, but that it improves clinics, schools, water access, and economic opportunity.</p>
-        </div>
-        <div class="mini-item">
-          <strong>Every KPI ties to a realistic Phase 1 use case.</strong>
-          <p>Metrics reflect a corridor-scale implementation centered on Tamale–Savelugu, with realistic counts of facilities, businesses, and trainees.</p>
-        </div>
-      </div>
-    </section>
   `;
 }
 
 function renderEnergy() {
   return `
     <div class="grid kpi-grid">
-      ${metricCard("☀", "yellow", "Solar Energy Generated", "7.4 MWh/day", "Average modeled daily production across corridor assets")}
-      ${metricCard("▭", "green", "Battery State of Charge", "61%", "Aggregate state of charge across Phase 1 storage assets")}
-      ${metricCard("✓", "blue", "System Uptime", "99.1%", "Measured operating uptime across corridor sites")}
-      ${metricCard("🏥", "purple", "Critical Load Availability", "100%", "Critical clinic and water loads currently supported")}
-      ${metricCard("⏱", "cyan", "Outage Hours Avoided", "176 hrs YTD", "Estimated outage hours avoided through backup power")}
-      ${metricCard("⚡", "yellow", "Current Load Demand", "486 kW", "Combined corridor load at current snapshot")}
+      ${metricCard("☀", "yellow", "Solar Energy Generated", "7,420 kWh/day", "Average daily corridor generation")}
+      ${metricCard("🔋", "green", "Battery State of Charge", "61%", "Aggregate battery state of charge")}
+      ${metricCard("✓", "blue", "System Uptime", "99.1%", "Phase 1 corridor uptime")}
+      ${metricCard("🏥", "purple", "Critical Load Availability", "99.6%", "Priority loads currently supported")}
+      ${metricCard("⏱", "cyan", "Outage Hours Avoided", "176 hrs YTD", "Estimated avoided service disruption")}
+      ${metricCard("⚡", "yellow", "Current Load Demand", "486 kW", "Combined current corridor load")}
     </div>
 
     <section class="card">
-      <h3 class="panel-title">Corridor Energy Operations</h3>
-      <p class="panel-subtitle">Live operational status for Phase 1 corridor nodes</p>
+      <h3 class="panel-title">Energy & Reliability Operations</h3>
+      <p class="panel-subtitle">Operational status across corridor nodes</p>
       <table>
         <thead>
           <tr>
             <th>Site</th>
             <th>Cluster</th>
             <th>Battery %</th>
+            <th>Current Load</th>
             <th>Critical Loads</th>
-            <th>System Uptime</th>
+            <th>Uptime</th>
             <th>Status</th>
-            <th>Recommended Action</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>TS-01</strong></td>
             <td>Tamale Health Hub</td>
-            <td style="color:#16a34a;">78%</td>
-            <td>Hospital support + refrigeration</td>
+            <td style="color:#16a34a;"><strong>78%</strong></td>
+            <td>148 kW</td>
+            <td>Clinic + refrigeration</td>
             <td>99.8%</td>
             <td>${badge("Stable", "green")}</td>
-            <td>Continue standard monitoring</td>
           </tr>
           <tr>
             <td><strong>TS-02</strong></td>
             <td>Tamale School + Water Cluster</td>
-            <td style="color:#16a34a;">64%</td>
-            <td>School lighting + pump support</td>
+            <td style="color:#16a34a;"><strong>64%</strong></td>
+            <td>122 kW</td>
+            <td>School lighting + pumping</td>
             <td>99.2%</td>
             <td>${badge("Stable", "green")}</td>
-            <td>Monitor evening school demand</td>
           </tr>
           <tr>
             <td><strong>TS-03</strong></td>
             <td>Savelugu Market + Cold Store</td>
-            <td style="color:#f97316;">49%</td>
-            <td>Cold storage + productive-use loads</td>
+            <td style="color:#f97316;"><strong>49%</strong></td>
+            <td>132 kW</td>
+            <td>Cold storage + market loads</td>
             <td>98.6%</td>
             <td>${badge("Watch", "yellow")}</td>
-            <td>Shift noncritical loads to daylight window</td>
           </tr>
           <tr>
             <td><strong>TS-04</strong></td>
-            <td>Savelugu CHPS + Water Point</td>
-            <td style="color:#f97316;">36%</td>
-            <td>CHPS + community water load</td>
+            <td>Savelugu CHPS + Water Node</td>
+            <td style="color:#f97316;"><strong>36%</strong></td>
+            <td>84 kW</td>
+            <td>CHPS + water point</td>
             <td>97.9%</td>
             <td>${badge("Watch", "yellow")}</td>
-            <td>Protect reserve for health service continuity</td>
           </tr>
         </tbody>
       </table>
@@ -347,24 +359,24 @@ function renderEnergy() {
 function renderCommunity() {
   return `
     <div class="grid kpi-grid">
-      ${metricCard("🎓", "green", "Students Served", "3,450", "Students benefiting from improved school power reliability")}
-      ${metricCard("🏥", "red", "Clinic Service Hours Supported", "1,120 hrs/mo", "Monthly healthcare service hours supported")}
-      ${metricCard("❄", "blue", "Refrigeration Availability", "99.4%", "Cold-chain / vaccine refrigeration uptime")}
-      ${metricCard("🏠", "purple", "Households Benefiting", "1,850", "Households receiving indirect benefit from improved service access")}
-      ${metricCard("🙂", "cyan", "Community Satisfaction", "4.4 / 5", "Survey-based satisfaction rating")}
-      ${metricCard("💧", "green", "Water Systems Supported", "3", "Community water systems with improved reliability")}
+      ${metricCard("🎓", "green", "Students Served", "3,450", "Students benefiting from improved school power")}
+      ${metricCard("🏥", "red", "Clinic Service Hours Supported", "1,120 hrs/mo", "Monthly health service hours supported")}
+      ${metricCard("❄", "blue", "Refrigeration Availability", "99.4%", "Medical / cold-chain uptime")}
+      ${metricCard("🏠", "purple", "Households Connected / Benefiting", "1,850", "Direct and indirect household benefit")}
+      ${metricCard("🙂", "cyan", "Community Satisfaction Score", "4.4 / 5", "Survey-based satisfaction measure")}
+      ${metricCard("💧", "green", "Water Systems Supported", "3", "Community water systems supported")}
     </div>
 
     <div class="alert info">
       <div>
-        <strong>Community impact is the outcome.</strong>
-        <p>This dashboard ties electricity access to concrete improvements in healthcare, education, water reliability, and everyday life.</p>
+        <strong>Community Impact is the outcome.</strong>
+        <p>This page measures what reliable electricity changes in people’s daily lives — especially for schools, clinics, refrigeration, households, and water access.</p>
       </div>
     </div>
 
     <section class="card">
-      <h3 class="panel-title">Community Impact by Service Type</h3>
-      <p class="panel-subtitle">Measured impact categories within the corridor</p>
+      <h3 class="panel-title">Community Impact by Service Area</h3>
+      <p class="panel-subtitle">Illustrative Phase 1 service benefit profile</p>
       ${barChartCommunity()}
     </section>
   `;
@@ -373,22 +385,22 @@ function renderCommunity() {
 function renderEconomic() {
   return `
     <div class="grid kpi-grid">
-      ${metricCard("🏪", "green", "Businesses Powered", "28", "Market vendors, microenterprises, and local businesses supported")}
-      ${metricCard("⚙", "yellow", "Productive-Use Equipment Hours", "186 hrs/week", "Estimated weekly operating hours of productive-use equipment")}
-      ${metricCard("❄", "blue", "Cold Storage Utilization", "74%", "Utilization of cold storage supported by reliable power")}
-      ${metricCard("↗", "purple", "Estimated Income Impact", "+$18,000/mo", "Estimated aggregate monthly income increase")}
-      ${metricCard("👥", "cyan", "Jobs Created", "32", "Direct and local jobs associated with Phase 1 deployment")}
-      ${metricCard("🌾", "green", "Agro-processing Sites", "5", "Sites using energy for productive economic activity")}
+      ${metricCard("🏪", "green", "Businesses Powered", "28", "Businesses supported by reliable electricity")}
+      ${metricCard("⚙", "yellow", "Productive-Use Equipment Hours", "186 hrs/week", "Estimated weekly operating hours")}
+      ${metricCard("❄", "blue", "Cold Storage Utilization", "74%", "Utilization of cold storage assets")}
+      ${metricCard("↗", "purple", "Estimated Income Impact", "+$18,000/mo", "Estimated aggregate monthly income gain")}
+      ${metricCard("👥", "cyan", "Jobs Created", "32", "Direct + local jobs associated with deployment")}
+      ${metricCard("🌾", "green", "Agro-Processing Sites", "5", "Productive-use agricultural activity sites")}
     </div>
 
     <section class="card">
-      <h3 class="panel-title">Economic Opportunity Monitor</h3>
-      <p class="panel-subtitle">How reliable energy is translating into productive use and local opportunity</p>
+      <h3 class="panel-title">Economic Development Monitor</h3>
+      <p class="panel-subtitle">Turning electricity access into productive opportunity</p>
       <table>
         <thead>
           <tr>
             <th>Use Case</th>
-            <th>Current Activity</th>
+            <th>Current Scale</th>
             <th>Impact Signal</th>
             <th>Status</th>
           </tr>
@@ -397,25 +409,25 @@ function renderEconomic() {
           <tr>
             <td>Cold storage</td>
             <td>2 active units</td>
-            <td>Reduced spoilage and longer marketable shelf life</td>
+            <td>Reduced spoilage and improved food preservation</td>
             <td>${badge("Strong", "green")}</td>
           </tr>
           <tr>
             <td>Agro-processing</td>
             <td>5 supported sites</td>
-            <td>More operating hours and more predictable throughput</td>
+            <td>Longer operating windows and more predictable output</td>
             <td>${badge("Growing", "blue")}</td>
           </tr>
           <tr>
             <td>Microenterprise</td>
             <td>28 businesses</td>
-            <td>Extended business hours and improved service delivery</td>
+            <td>Extended operating hours and improved service delivery</td>
             <td>${badge("Growing", "green")}</td>
           </tr>
           <tr>
-            <td>Evening commerce</td>
+            <td>Evening market activity</td>
             <td>Moderate</td>
-            <td>Improved lighting and market visibility</td>
+            <td>Better lighting and greater evening commerce</td>
             <td>${badge("Emerging", "yellow")}</td>
           </tr>
         </tbody>
@@ -428,30 +440,30 @@ function renderFinance() {
   return `
     <div class="grid kpi-grid">
       ${metricCard("$", "yellow", "Cost per kWh Delivered", "$0.23", "Estimated blended delivered cost")}
-      ${metricCard("✓", "green", "Revenue Collection Rate", "92%", "Percentage of collectible revenue recovered")}
-      ${metricCard("↺", "blue", "Cost Recovery", "88%", "Share of operating costs recovered")}
-      ${metricCard("🧰", "purple", "Maintenance Cost Trend", "On Budget", "Maintenance expenditure relative to plan")}
-      ${metricCard("🏦", "cyan", "Funding Leveraged", "$6.4M", "Climate / partner financing leveraged beyond base budget")}
-      ${metricCard("📦", "green", "O&M Reserve Coverage", "14 months", "Estimated operations reserve coverage")}
+      ${metricCard("✓", "green", "Revenue Collection Rate", "92%", "Share of collectible revenue recovered")}
+      ${metricCard("↺", "blue", "Cost Recovery", "88%", "Share of operating cost recovered")}
+      ${metricCard("🧰", "purple", "Maintenance Cost Trend", "3% below plan", "Current maintenance cost trend")}
+      ${metricCard("🏦", "cyan", "Funding Leveraged", "$6.4M", "Climate / partner financing leveraged")}
+      ${metricCard("📦", "green", "O&M Reserve Coverage", "14 months", "Estimated reserve runway")}
     </div>
 
     <section class="card">
       <h3 class="panel-title">Financial Sustainability Summary</h3>
-      <p class="panel-subtitle">Can the system last, and can we prove it?</p>
+      <p class="panel-subtitle">Building a system that can last</p>
       <table>
         <thead>
           <tr>
-            <th>Financial KPI</th>
+            <th>Metric</th>
             <th>Current Value</th>
             <th>Interpretation</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Cost per kWh Delivered</td><td><strong>$0.23</strong></td><td>Reasonable early-phase delivery cost for distributed resilient infrastructure</td></tr>
+          <tr><td>Cost per kWh Delivered</td><td><strong>$0.23</strong></td><td>Reasonable for resilient distributed energy in a first-phase deployment</td></tr>
           <tr><td>Revenue Collection Rate</td><td><strong>92%</strong></td><td>Strong early collection performance</td></tr>
-          <tr><td>Cost Recovery</td><td><strong>88%</strong></td><td>Approaching sustainable operations; remaining gap can be supported by grant / climate finance</td></tr>
-          <tr><td>Funding Leveraged</td><td><strong>$6.4M</strong></td><td>Shows credibility with external funders</td></tr>
-          <tr><td>Maintenance Cost Trend</td><td><strong>On Budget</strong></td><td>Indicates manageable operating burden</td></tr>
+          <tr><td>Cost Recovery</td><td><strong>88%</strong></td><td>Approaching operational sustainability</td></tr>
+          <tr><td>Maintenance Cost Trend</td><td><strong>3% below plan</strong></td><td>Maintenance burden is currently manageable</td></tr>
+          <tr><td>Funding Leveraged</td><td><strong>$6.4M</strong></td><td>Demonstrates climate-finance / partner confidence</td></tr>
         </tbody>
       </table>
     </section>
@@ -461,36 +473,36 @@ function renderFinance() {
 function renderSafety() {
   return `
     <div class="grid kpi-grid">
-      ${metricCard("✓", "green", "Electrical Safety Incidents", "0", "No recordable incidents reported")}
-      ${metricCard("🔋", "blue", "Battery Safety Events", "0", "No safety events across corridor battery systems")}
-      ${metricCard("🔒", "purple", "Cybersecurity Alerts", "2 low", "Low-severity alerts, resolved without escalation")}
-      ${metricCard("📋", "cyan", "Inspection Compliance", "100%", "Scheduled inspections completed")}
-      ${metricCard("👷", "yellow", "Operator Training Completion", "88%", "Percent of operators completing required training")}
-      ${metricCard("⏱", "green", "Emergency Response Target", "< 4 hrs", "Target response time for site-level issues")}
+      ${metricCard("✓", "green", "Electrical Safety Incidents", "0", "No recordable electrical safety incidents")}
+      ${metricCard("🔋", "blue", "Battery Safety Events", "0", "No battery safety events reported")}
+      ${metricCard("🔒", "purple", "Cybersecurity Alerts", "2 low", "Low-severity alerts, resolved")}
+      ${metricCard("📋", "cyan", "Inspection Compliance", "100%", "All scheduled inspections completed")}
+      ${metricCard("👷", "yellow", "Operator Training Completion", "88%", "Required operator training completion")}
+      ${metricCard("⏱", "green", "Emergency Response Target", "< 4 hrs", "Target response time for priority issues")}
     </div>
 
     <div class="grid two-col">
       ${sectionCard(
         "Active Safety Monitor",
-        "Current alerts and risks",
+        "Current system risks and alerts",
         `
         <div class="risk-list">
-          <div class="risk-row risk-low"><strong>Battery room temperature monitoring</strong><span>Low</span></div>
-          <div class="risk-row risk-low"><strong>Routine cybersecurity review</strong><span>Low</span></div>
-          <div class="risk-row risk-medium"><strong>Dust accumulation risk during dry season</strong><span>Medium</span></div>
+          <div class="risk-row risk-low"><strong>Battery room temperature trend under watch</strong><span>Low</span></div>
+          <div class="risk-row risk-low"><strong>Routine cybersecurity review complete</strong><span>Low</span></div>
+          <div class="risk-row risk-medium"><strong>Dry-season dust accumulation risk</strong><span>Medium</span></div>
         </div>
         `
       )}
 
       ${sectionCard(
         "Priority Protection Order",
-        "What gets protected first during disturbances",
+        "Loads protected first during disturbances",
         `
         <div class="priority-stack">
-          <div class="stack-row"><span>1</span><strong>Clinics / CHPS + refrigeration</strong></div>
-          <div class="stack-row"><span>2</span><strong>Water systems</strong></div>
-          <div class="stack-row"><span>3</span><strong>Schools and learning loads</strong></div>
-          <div class="stack-row"><span>4</span><strong>Productive-use and business loads</strong></div>
+          <div class="stack-row"><span>1</span><strong>Clinics and vaccine refrigeration</strong></div>
+          <div class="stack-row"><span>2</span><strong>Water systems and community hubs</strong></div>
+          <div class="stack-row"><span>3</span><strong>Schools</strong></div>
+          <div class="stack-row"><span>4</span><strong>Small businesses and productive-use loads</strong></div>
         </div>
         `
       )}
@@ -501,17 +513,17 @@ function renderSafety() {
 function renderWorkforce() {
   return `
     <div class="grid kpi-grid">
-      ${metricCard("🎓", "green", "Students Trained", "48", "Students participating in technical learning experiences")}
-      ${metricCard("♀", "purple", "Women Participating", "58%", "Share of women participants in workforce activities")}
-      ${metricCard("📜", "blue", "Technical Certifications", "14", "Formal certifications earned")}
-      ${metricCard("🧰", "yellow", "Local Technicians Trained", "12", "Local technicians trained for operations / maintenance")}
-      ${metricCard("👥", "cyan", "Community Workshops", "9", "Workshops delivered to community members")}
-      ${metricCard("✓", "green", "Training Completion", "91%", "Completion rate for planned workforce activities")}
+      ${metricCard("🎓", "green", "Students Trained", "48", "Students engaged in technical learning")}
+      ${metricCard("♀", "purple", "Women Participating", "58%", "Women participants in workforce activities")}
+      ${metricCard("📜", "blue", "Technical Certifications Earned", "14", "Formal certifications completed")}
+      ${metricCard("🧰", "yellow", "Local Technicians Trained", "12", "Technicians prepared for O&M support")}
+      ${metricCard("👥", "cyan", "Community Workshops Delivered", "9", "Workshops held with local participants")}
+      ${metricCard("✓", "green", "Training Completion", "91%", "Completion rate for planned activities")}
     </div>
 
     <section class="card">
-      <h3 class="panel-title">Workforce Pipeline</h3>
-      <p class="panel-subtitle">Building local capacity for long-term system success</p>
+      <h3 class="panel-title">Workforce Development Summary</h3>
+      <p class="panel-subtitle">Creating local capacity for long-term success</p>
       <table>
         <thead>
           <tr>
@@ -521,11 +533,11 @@ function renderWorkforce() {
           </tr>
         </thead>
         <tbody>
-          <tr><td>Student engagement</td><td><strong>48 participants</strong></td><td>Builds future local energy talent</td></tr>
-          <tr><td>Technician training</td><td><strong>12 trained</strong></td><td>Supports local operations and maintenance</td></tr>
-          <tr><td>Women’s participation</td><td><strong>58%</strong></td><td>Improves inclusion and local opportunity</td></tr>
-          <tr><td>Certifications earned</td><td><strong>14</strong></td><td>Shows measurable skill attainment</td></tr>
-          <tr><td>Community workshops</td><td><strong>9</strong></td><td>Builds local understanding and buy-in</td></tr>
+          <tr><td>Student training</td><td><strong>48 participants</strong></td><td>Builds future local energy talent</td></tr>
+          <tr><td>Women’s participation</td><td><strong>58%</strong></td><td>Improves inclusion and access to opportunity</td></tr>
+          <tr><td>Technical certifications</td><td><strong>14 earned</strong></td><td>Shows measurable skill development</td></tr>
+          <tr><td>Local technicians</td><td><strong>12 trained</strong></td><td>Supports local operations and maintenance</td></tr>
+          <tr><td>Community workshops</td><td><strong>9 delivered</strong></td><td>Builds trust, awareness, and adoption</td></tr>
         </tbody>
       </table>
     </section>
@@ -537,7 +549,7 @@ function renderMap() {
     <div class="grid two-col">
       ${sectionCard(
         "Tamale–Savelugu Opportunity Corridor",
-        "Illustrative corridor deployment geography",
+        "Illustrative Phase 1 deployment geography",
         `
         <div class="map-visual">
           <div class="ghana-shape"></div>
@@ -550,21 +562,21 @@ function renderMap() {
       )}
 
       ${sectionCard(
-        "Corridor Deployment Notes",
-        "Why this geography makes sense for Phase 1",
+        "Deployment Notes",
+        "Why this corridor is a credible Phase 1 focus",
         `
         <div class="mini-list">
           <div class="mini-item">
-            <strong>Tamale anchor</strong>
-            <p>Acts as the main service and logistics node for health, education, and technical operations.</p>
+            <strong>Tamale anchor hub</strong>
+            <p>Provides a realistic primary service node for health, education, operations, and logistics.</p>
           </div>
           <div class="mini-item">
-            <strong>Savelugu opportunity node</strong>
-            <p>Provides a realistic corridor extension for education, health, market activity, and productive-use energy.</p>
+            <strong>Savelugu extension</strong>
+            <p>Adds a second corridor node for clinics, schools, water systems, local businesses, and productive-use activity.</p>
           </div>
           <div class="mini-item">
-            <strong>Why corridor scale?</strong>
-            <p>It is large enough to demonstrate meaningful impact, but still realistic for a first phase that can be financed, operated, and monitored.</p>
+            <strong>Right-sized geography</strong>
+            <p>Large enough to show measurable impact, but still financeable, maintainable, and realistic for Phase 1.</p>
           </div>
         </div>
         `
@@ -575,29 +587,42 @@ function renderMap() {
 
 function renderDictionary() {
   const rows = [
-    ["Solar Energy Generated", "Average daily energy produced by Phase 1 corridor solar assets.", "Energy & Reliability", "Generation monitoring", "Daily"],
-    ["Battery State of Charge", "Current charge level across energy storage assets.", "Energy & Reliability", "Battery monitoring system", "Hourly"],
-    ["System Uptime", "Percent of time the corridor systems are operational.", "Energy & Reliability", "Operations logs", "Daily"],
-    ["Critical Load Availability", "Availability of priority power to clinics, water, and other critical loads.", "Energy & Reliability", "Facility monitoring", "Daily"],
-    ["Outage Hours Avoided", "Estimated number of outage hours mitigated by the corridor system.", "Energy & Reliability", "Reliability model", "Monthly"],
-    ["Students Served", "Students directly benefiting from improved electricity access.", "Community Impact", "School records / estimates", "Quarterly"],
-    ["Clinic Service Hours Supported", "Healthcare service hours enabled or protected by reliable power.", "Community Impact", "Clinic records / estimates", "Monthly"],
-    ["Refrigeration Availability", "Availability of powered cold storage or medical refrigeration.", "Community Impact", "Site monitoring", "Monthly"],
-    ["Businesses Powered", "Businesses or market operators supported by improved energy access.", "Economic Development", "Program records", "Quarterly"],
-    ["Productive-Use Equipment Hours", "Operating hours of equipment using electricity for income generation.", "Economic Development", "Site logs", "Monthly"],
-    ["Estimated Income Impact", "Estimated economic uplift associated with supported business activity.", "Economic Development", "Economic model / survey", "Quarterly"],
-    ["Cost per kWh Delivered", "Estimated delivered cost of electricity through the corridor system.", "Financial Sustainability", "Financial model", "Quarterly"],
-    ["Revenue Collection Rate", "Share of collectible revenue successfully collected.", "Financial Sustainability", "Finance records", "Monthly"],
+    ["Solar Energy Generated", "Average daily energy produced by corridor solar assets.", "Energy & Reliability", "Generation monitoring", "Daily"],
+    ["Battery State of Charge", "Current aggregate battery charge level.", "Energy & Reliability", "Battery management system", "Hourly"],
+    ["System Uptime", "Percent of time corridor systems are operational.", "Energy & Reliability", "Operations logs", "Daily"],
+    ["Critical Load Availability", "Availability of power to priority loads.", "Energy & Reliability", "Facility monitoring", "Daily"],
+    ["Outage Hours Avoided", "Estimated service disruption avoided through backup power.", "Energy & Reliability", "Reliability model", "Monthly"],
+    ["Students Served", "Students benefiting from improved electricity access.", "Community Impact", "School records / estimates", "Quarterly"],
+    ["Clinic Service Hours Supported", "Healthcare service hours enabled by reliable power.", "Community Impact", "Clinic estimates", "Monthly"],
+    ["Refrigeration Availability", "Availability of medical or cold-chain refrigeration.", "Community Impact", "Site monitoring", "Monthly"],
+    ["Households Connected / Benefiting", "Households directly or indirectly benefiting from improved services.", "Community Impact", "Program estimate", "Quarterly"],
+    ["Community Satisfaction Score", "Survey-based community satisfaction rating.", "Community Impact", "Survey data", "Quarterly"],
+    ["Businesses Powered", "Businesses supported by reliable electricity.", "Economic Development", "Program records", "Quarterly"],
+    ["Productive-Use Equipment Hours", "Hours of operation for productive-use equipment.", "Economic Development", "Site logs", "Monthly"],
+    ["Cold Storage Utilization", "Utilization rate of cold storage capacity.", "Economic Development", "Usage logs", "Monthly"],
+    ["Estimated Income Impact", "Estimated income uplift from improved electricity access.", "Economic Development", "Economic estimate", "Quarterly"],
+    ["Jobs Created", "Direct and indirect jobs created.", "Economic Development", "Program estimate", "Quarterly"],
+    ["Cost per kWh Delivered", "Estimated blended delivered electricity cost.", "Financial Sustainability", "Financial model", "Quarterly"],
+    ["Revenue Collection Rate", "Percentage of collectible revenue recovered.", "Financial Sustainability", "Finance records", "Monthly"],
+    ["Cost Recovery", "Share of operating costs recovered.", "Financial Sustainability", "Finance model", "Quarterly"],
+    ["Maintenance Cost Trend", "Current maintenance cost performance versus plan.", "Financial Sustainability", "O&M records", "Quarterly"],
+    ["Funding Leveraged", "Additional partner or climate finance secured.", "Financial Sustainability", "Finance records", "Quarterly"],
     ["Electrical Safety Incidents", "Number of reportable electrical safety incidents.", "Safety & Security", "Safety reporting", "Monthly"],
-    ["Cybersecurity Alerts", "Count of cybersecurity alerts requiring review.", "Safety & Security", "Security system logs", "Monthly"],
-    ["Students Trained", "Number of students participating in technical and workforce training.", "Workforce Development", "Training records", "Quarterly"],
-    ["Local Technicians Trained", "Local technicians trained to operate or maintain the system.", "Workforce Development", "Training records", "Quarterly"]
+    ["Battery Safety Events", "Number of reportable battery safety events.", "Safety & Security", "Safety reporting", "Monthly"],
+    ["Cybersecurity Alerts", "Security alerts requiring review or response.", "Safety & Security", "System logs", "Monthly"],
+    ["Inspection Compliance", "Percent of required inspections completed.", "Safety & Security", "Inspection records", "Monthly"],
+    ["Operator Training Completion", "Percent of operators completing required training.", "Safety & Security", "Training records", "Quarterly"],
+    ["Students Trained", "Students engaged in workforce development activities.", "Workforce Development", "Training records", "Quarterly"],
+    ["Women Participating", "Share of women participating in workforce development.", "Workforce Development", "Participation records", "Quarterly"],
+    ["Technical Certifications Earned", "Formal technical certifications completed.", "Workforce Development", "Training records", "Quarterly"],
+    ["Local Technicians Trained", "Technicians trained to support operations and maintenance.", "Workforce Development", "Training records", "Quarterly"],
+    ["Community Workshops Delivered", "Number of workshops delivered to community participants.", "Workforce Development", "Program records", "Quarterly"]
   ];
 
   return `
     <section class="card">
       <h3 class="panel-title">KPI Data Dictionary</h3>
-      <p class="panel-subtitle">Definitions, sources, and update frequency</p>
+      <p class="panel-subtitle">Definitions, sources, and reporting cadence</p>
       <table>
         <thead>
           <tr>
@@ -629,7 +654,7 @@ function renderScenario() {
     <div class="alert info">
       <div>
         <strong>Scenario Comparison</strong>
-        <p>This view compares the corridor before intervention, its current status, and the Phase 1 target state.</p>
+        <p>This view compares the corridor before intervention, its current modeled status, and the Phase 1 target state.</p>
       </div>
     </div>
 
@@ -641,7 +666,7 @@ function renderScenario() {
       </section>
       <section class="card scenario-summary green">
         <h3>Current</h3>
-        <p>Modeled early implementation status</p>
+        <p>Early modeled implementation status</p>
         <strong>Operational</strong>
       </section>
       <section class="card scenario-summary gray">
@@ -652,12 +677,13 @@ function renderScenario() {
     </div>
 
     <section class="card" style="margin-top:24px;">
-      <h3 class="panel-title">Phase 1 Performance Shift</h3>
-      <p class="panel-subtitle">Selected KPIs from baseline to target</p>
+      <h3 class="panel-title">Selected KPI Shift</h3>
+      <p class="panel-subtitle">From baseline conditions to realistic Phase 1 target</p>
       ${comparisonBars("System Uptime", "58", "91", "99", "%")}
       ${comparisonBars("Critical Load Availability", "41", "88", "99", "%")}
-      ${comparisonBars("Community Benefit Coverage", "22", "61", "90", "%")}
-      ${comparisonBars("Business Energy Reliability", "30", "68", "92", "%")}
+      ${comparisonBars("Households Benefiting", "20", "54", "82", "%")}
+      ${comparisonBars("Business Energy Reliability", "30", "68", "90", "%")}
+      ${comparisonBars("Cold Storage Utilization", "0", "52", "74", "%")}
       ${comparisonBars("Workforce Capacity Readiness", "15", "54", "85", "%")}
     </section>
   `;
@@ -671,15 +697,15 @@ function renderAbout() {
         "A KPI-driven command center for the PowerLink Ghana Phase 1 proposal",
         `
         <p>This dashboard is designed to show whether the proposed energy system is actually working — and whether it is improving life in measurable ways.</p>
-        <p>It is intentionally aligned to the project’s six KPI families: Energy & Reliability, Community Impact, Economic Development, Financial Sustainability, Safety & Security, and Workforce Development.</p>
+        <p>It directly aligns to the project’s six KPI families from the presentation slide: Energy & Reliability, Community Impact, Economic Development, Financial Sustainability, Safety & Security, and Workforce Development.</p>
         `
       )}
 
       ${sectionCard(
         "Why realism matters",
-        "This is built for a corridor-scale Phase 1, not a national rollout",
+        "This is sized to a corridor-scale Phase 1, not a national rollout",
         `
-        <p>The dashboard is sized to the Tamale–Savelugu Opportunity Corridor so that the facility counts, business counts, workforce numbers, and budget assumptions remain credible.</p>
+        <p>The metrics reflect a realistic Phase 1 deployment in the Tamale–Savelugu Opportunity Corridor, so the site counts, business counts, household impacts, clinic hours, and budget assumptions remain credible.</p>
         <p><strong>If we cannot measure it, we cannot prove it worked — or improve it.</strong></p>
         `
       )}
@@ -687,7 +713,7 @@ function renderAbout() {
 
     <section class="card" style="margin-top:24px;">
       <h3 class="panel-title">SDG Alignment</h3>
-      <p class="panel-subtitle">The outcomes this dashboard helps demonstrate</p>
+      <p class="panel-subtitle">The outcomes this dashboard is designed to help demonstrate</p>
       <div class="grid sdg-grid">
         <div class="sdg"><strong>SDG 3</strong>Health and Well-Being</div>
         <div class="sdg"><strong>SDG 4</strong>Quality Education</div>
@@ -714,18 +740,18 @@ function barChartCommunity() {
           <line x1="50" y1="70" x2="980" y2="70" />
         </g>
         <g fill="#45c463">
-          <rect x="90" y="95" width="80" height="125" rx="4" />
-          <rect x="280" y="60" width="80" height="160" rx="4" />
-          <rect x="470" y="80" width="80" height="140" rx="4" />
-          <rect x="660" y="110" width="80" height="110" rx="4" />
-          <rect x="850" y="100" width="80" height="120" rx="4" />
+          <rect x="90" y="85" width="85" height="135" rx="4" />
+          <rect x="260" y="70" width="85" height="150" rx="4" />
+          <rect x="430" y="78" width="85" height="142" rx="4" />
+          <rect x="600" y="92" width="85" height="128" rx="4" />
+          <rect x="770" y="108" width="85" height="112" rx="4" />
         </g>
         <g fill="#64748b" font-size="14">
-          <text x="85" y="242">Schools</text>
-          <text x="260" y="242">Clinics</text>
-          <text x="463" y="242">Refrigeration</text>
-          <text x="655" y="242">Households</text>
-          <text x="830" y="242">Water Systems</text>
+          <text x="82" y="242">Students</text>
+          <text x="232" y="242">Clinic Hours</text>
+          <text x="390" y="242">Refrigeration</text>
+          <text x="588" y="242">Households</text>
+          <text x="760" y="242">Water Systems</text>
         </g>
       </svg>
     </div>
