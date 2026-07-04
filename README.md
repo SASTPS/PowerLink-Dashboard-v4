@@ -1,31 +1,30 @@
 # PowerLink Ghana 2050 Command Center
 
-The **PowerLink Ghana 2050 Command Center** is a dashboard prototype for the **Girls With Energy Challenge**. It is designed to show how a realistic Phase 1 clean-energy deployment could support the **Tamale–Savelugu Opportunity Corridor** in Northern Ghana.
+The **PowerLink Ghana 2050 Command Center** is a KPI-driven dashboard prototype for the **Girls With Energy Challenge**. It is designed to show whether the proposed clean-energy system is working technically, financially, safely, and socially.
 
-This dashboard is not a national rollout model. It is sized to a realistic first-phase corridor deployment focused on reliability, community services, economic development, financial sustainability, safety, and workforce development.
+The dashboard is aligned to the project slide titled:
+
+**KPI Framework — Measuring What Matters**
+
+The dashboard focuses on a realistic **Phase 1 deployment** for the **Tamale–Savelugu Opportunity Corridor** in Northern Ghana. It is not presented as a national rollout. The purpose is to show a credible corridor-scale model that can be measured, improved, and expanded over time.
 
 ## Project Focus
 
-**Phase 1 Region:** Tamale–Savelugu Opportunity Corridor  
-**Project Type:** Solar + battery storage + smart monitoring + critical-load support  
+**Project Name:** PowerLink Ghana 2050  
 **Team:** TechnoSaints Nexus  
 **Challenge:** Girls With Energy Challenge  
-**Dashboard Purpose:** Measure whether the proposed energy system works technically, financially, and socially.
+**Phase 1 Focus Area:** Tamale–Savelugu Opportunity Corridor  
+**System Type:** Solar generation, battery storage, critical-load support, productive-use energy, smart monitoring, and workforce development  
+**Dashboard Purpose:** Measure technical performance and community outcomes together
 
-## Why This Dashboard Matters
+## Core Message
 
-Power generation is the output. Community impact is the outcome.
+Power generation is the output.  
+Community impact is the outcome.
 
-The dashboard is built to answer questions like:
+This dashboard measures both.
 
-- Is the system reliable?
-- Are clinics, schools, and water systems protected?
-- Are businesses and productive-use loads benefiting?
-- Is the system financially sustainable?
-- Are safety and cybersecurity risks being managed?
-- Is the project building local technical capacity?
-
-The guiding idea is:
+The guiding principle is:
 
 > If we cannot measure it, we cannot prove it worked — or improve it.
 
@@ -34,7 +33,7 @@ The guiding idea is:
 The dashboard includes the following screens:
 
 1. **Home Dashboard**
-2. **Live Operations**
+2. **Energy & Reliability**
 3. **Community Impact**
 4. **Economic Development**
 5. **Financial Sustainability**
@@ -47,108 +46,212 @@ The dashboard includes the following screens:
 
 ## KPI Framework
 
-The dashboard aligns with six project KPI families.
+The dashboard directly matches the six KPI families from the project slide.
 
-### 1. Energy & Reliability
+---
 
-Measures whether the energy system is dependable and whether critical loads remain powered.
+## 1. Energy & Reliability
 
-Example metrics:
+**Purpose:** Ensure power is available when communities need it.
 
-- Solar energy generated
-- Battery state of charge
-- System uptime
-- Critical load availability
-- Outage hours avoided
-- Current load demand
+This KPI family measures whether the energy system is dependable, whether the solar and battery systems are performing, and whether critical loads remain available during outages or disruptions.
 
-### 2. Community Impact
+### Dashboard Metrics
 
-Measures how reliable electricity improves daily life and public services.
+- Solar Energy Generated
+- Battery State of Charge
+- System Uptime
+- Critical Load Availability
+- Outage Hours Avoided
+- Current Load Demand
 
-Example metrics:
+### Smart Target
 
-- Students served
-- Clinic service hours supported
-- Refrigeration availability
-- Households benefiting
-- Community satisfaction
-- Water systems supported
+Deliver greater than 99% critical-load availability with real-time monitoring.
 
-### 3. Economic Development
+### Example Phase 1 Dashboard Values
 
-Measures how energy access supports income, business activity, and productive use.
+- Solar Energy Generated: 7,420 kWh/day
+- Battery State of Charge: 61%
+- System Uptime: 99.1%
+- Critical Load Availability: 99.6%
+- Outage Hours Avoided: 176 hours year-to-date
+- Current Load Demand: 486 kW
 
-Example metrics:
+---
 
-- Businesses powered
-- Productive-use equipment hours
-- Cold storage utilization
-- Estimated income impact
-- Jobs created
-- Agro-processing sites supported
+## 2. Community Impact
 
-### 4. Financial Sustainability
+**Purpose:** Measure improvements in daily life.
 
-Measures whether the system can be funded, operated, maintained, and sustained.
+This KPI family tracks whether reliable electricity improves education, healthcare, refrigeration, household access, water reliability, and community satisfaction.
 
-Example metrics:
+### Dashboard Metrics
 
-- Cost per kWh delivered
-- Revenue collection rate
-- Cost recovery
-- Maintenance cost trend
-- Funding leveraged
-- O&M reserve coverage
+- Students Served
+- Clinic Service Hours Supported
+- Refrigeration Availability
+- Households Connected / Benefiting
+- Community Satisfaction Score
+- Water Systems Supported
 
-### 5. Safety & Security
+### Smart Target
 
-Measures whether the system protects people, equipment, data, and critical infrastructure.
+Demonstrate measurable improvements in education, healthcare, and access.
 
-Example metrics:
+### Example Phase 1 Dashboard Values
 
-- Electrical safety incidents
-- Battery safety events
-- Cybersecurity alerts
-- Inspection compliance
-- Operator training completion
-- Emergency response target
+- Students Served: 3,450
+- Clinic Service Hours Supported: 1,120 hours per month
+- Refrigeration Availability: 99.4%
+- Households Connected / Benefiting: 1,850
+- Community Satisfaction Score: 4.4 out of 5
+- Water Systems Supported: 3
 
-### 6. Workforce Development
+---
 
-Measures whether the project builds local skills and long-term technical capacity.
+## 3. Economic Development
 
-Example metrics:
+**Purpose:** Turn energy access into opportunity.
 
-- Students trained
-- Women participating
-- Technical certifications earned
-- Local technicians trained
-- Community workshops
-- Training completion rate
+This KPI family measures whether reliable electricity supports businesses, productive-use equipment, cold storage, agriculture, jobs, and income growth.
+
+### Dashboard Metrics
+
+- Businesses Powered
+- Productive-Use Equipment Hours
+- Cold Storage Utilization
+- Estimated Income Impact
+- Jobs Created
+- Agro-Processing Sites
+
+### Smart Target
+
+Track economic activity enabled by reliable electricity.
+
+### Example Phase 1 Dashboard Values
+
+- Businesses Powered: 28
+- Productive-Use Equipment Hours: 186 hours per week
+- Cold Storage Utilization: 74%
+- Estimated Income Impact: +$18,000 per month
+- Jobs Created: 32
+- Agro-Processing Sites: 5
+
+---
+
+## 4. Financial Sustainability
+
+**Purpose:** Build a system that can last.
+
+This KPI family tracks whether the system can be funded, operated, maintained, and sustained over time.
+
+### Dashboard Metrics
+
+- Cost per kWh Delivered
+- Revenue Collection Rate
+- Cost Recovery
+- Maintenance Cost Trend
+- Funding Leveraged
+- O&M Reserve Coverage
+
+### Smart Target
+
+Achieve sustainable operations with transparent financial performance.
+
+### Example Phase 1 Dashboard Values
+
+- Cost per kWh Delivered: $0.23
+- Revenue Collection Rate: 92%
+- Cost Recovery: 88%
+- Maintenance Cost Trend: 3% below plan
+- Funding Leveraged: $6.4M
+- O&M Reserve Coverage: 14 months
+
+---
+
+## 5. Safety & Security
+
+**Purpose:** Protect people, equipment, and data.
+
+This KPI family measures whether the system is operating safely and whether cybersecurity, inspections, training, and emergency response procedures are being managed.
+
+### Dashboard Metrics
+
+- Electrical Safety Incidents
+- Battery Safety Events
+- Cybersecurity Alerts
+- Inspection Compliance
+- Operator Training Completion
+- Emergency Response Target
+
+### Smart Target
+
+Achieve zero safety incidents and 100% compliance with operating procedures.
+
+### Example Phase 1 Dashboard Values
+
+- Electrical Safety Incidents: 0
+- Battery Safety Events: 0
+- Cybersecurity Alerts: 2 low-severity alerts
+- Inspection Compliance: 100%
+- Operator Training Completion: 88%
+- Emergency Response Target: Under 4 hours
+
+---
+
+## 6. Workforce Development
+
+**Purpose:** Create local capacity for long-term success.
+
+This KPI family tracks whether the project is building the local skills needed to operate, maintain, and expand the system.
+
+### Dashboard Metrics
+
+- Students Trained
+- Women Participating
+- Technical Certifications Earned
+- Local Technicians Trained
+- Community Workshops Delivered
+- Training Completion
+
+### Smart Target
+
+Build a skilled local workforce capable of operating and maintaining the system.
+
+### Example Phase 1 Dashboard Values
+
+- Students Trained: 48
+- Women Participating: 58%
+- Technical Certifications Earned: 14
+- Local Technicians Trained: 12
+- Community Workshops Delivered: 9
+- Training Completion: 91%
+
+---
 
 ## Phase 1 Corridor Scope
 
-The dashboard is sized for a realistic Phase 1 deployment in the **Tamale–Savelugu Opportunity Corridor**.
+The dashboard is sized to a realistic Phase 1 deployment in the **Tamale–Savelugu Opportunity Corridor**.
 
 Example modeled Phase 1 scope:
 
-- 4 clinics or CHPS-related health service sites
+- 4 clinic or CHPS-related health service sites
 - 6 schools
 - 3 water systems
-- 28 businesses or productive-use users
+- 28 local businesses or productive-use users
 - 5 agro-processing or productive-use sites
-- 48 students or local participants trained
+- 1 market / cold storage cluster
+- 1 smart monitoring and dashboard system
+- 48 students trained
 - 12 local technicians trained
-- 1 corridor-scale smart monitoring dashboard
+- 9 community workshops delivered
 
 ## Phase 1 Budget Snapshot
 
-The dashboard uses a realistic corridor-scale budget rather than an inflated national-scale budget.
+The dashboard uses a realistic corridor-scale budget, not an inflated national-scale number.
 
-### Base Phase 1 Budget
-
-**Total Base Budget:** `$18.5M`
+**Total Base Phase 1 Budget:** $18.5M
 
 | Budget Category | Allocation | Purpose |
 |---|---:|---|
@@ -161,58 +264,81 @@ The dashboard uses a realistic corridor-scale budget rather than an inflated nat
 | Workforce development | $0.8M | Training, certifications, and community capacity |
 | Permitting / PM / contingency | $1.0M | Approvals, project management, and reserve contingency |
 
-### Climate Finance Upside
+## Climate Finance Upside
 
-The project can also show a potential climate-finance layer above the base budget.
+The project can also show a climate-finance layer above the base budget.
 
-**Potential climate-finance upside:** `+$6.0M to +$7.5M`
+**Potential climate-finance upside:** +$6.0M to +$7.5M
 
 This additional funding could support:
 
 - Additional battery storage
-- Climate resilience upgrades
+- Resilience expansion
 - Emissions tracking
-- Adaptation planning
-- Expanded productive-use support
+- Climate adaptation planning
 - Longer-term monitoring and reporting
+- Additional productive-use energy support
+- Expanded workforce training
 
 ## Map View
 
-The Map View represents an illustrative **Tamale–Savelugu Opportunity Corridor**.
+The Map View represents the **Tamale–Savelugu Opportunity Corridor** as an illustrative Phase 1 deployment geography.
 
 The map highlights:
 
-- Tamale hub
-- School + water cluster
-- Market / cold storage cluster
-- Savelugu CHPS / water node
+- Tamale Hub
+- School + Water Cluster
+- Market / Cold Store Cluster
+- Savelugu CHPS / Water Node
 
-The map is meant to show a realistic first-phase deployment geography, not a full national grid map.
+The map is intended to show a right-sized first-phase deployment area that is large enough to demonstrate meaningful impact, but still realistic to finance, operate, and monitor.
 
 ## Scenario Comparison
 
-The dashboard compares three states:
+The Scenario Comparison screen compares three states:
 
-1. **Baseline**  
-   Conditions before meaningful corridor-scale intervention.
+### 1. Baseline
 
-2. **Current**  
-   Modeled early implementation status.
+Conditions before meaningful corridor-scale intervention.
 
-3. **Phase 1 Target**  
-   Expected outcome after corridor implementation.
+### 2. Current
+
+Early modeled implementation status.
+
+### 3. Phase 1 Target
+
+Expected outcome after corridor implementation.
 
 Example comparison metrics:
 
-- System uptime
-- Critical load availability
-- Community benefit coverage
-- Business energy reliability
-- Workforce capacity readiness
+- System Uptime
+- Critical Load Availability
+- Households Benefiting
+- Business Energy Reliability
+- Cold Storage Utilization
+- Workforce Capacity Readiness
+
+## Data Dictionary
+
+The Data Dictionary defines each KPI, the KPI family it belongs to, the expected data source, and the reporting frequency.
+
+Example data sources include:
+
+- Generation monitoring
+- Battery management system
+- Operations logs
+- Facility monitoring
+- Clinic estimates
+- School records
+- Program records
+- Financial records
+- Safety reporting
+- Training records
+- Community surveys
 
 ## SDG Alignment
 
-The project supports the following Sustainable Development Goals:
+The dashboard supports the following Sustainable Development Goals:
 
 - **SDG 3:** Good Health and Well-Being
 - **SDG 4:** Quality Education
@@ -234,8 +360,19 @@ This dashboard is built with:
 
 ## Repository Files
 
-```text
-index.html
-style.css
-script.js
-README.md
+- index.html
+- style.css
+- script.js
+- README.md
+
+## Live Dashboard
+
+After GitHub Pages is enabled, the dashboard can be viewed at:
+
+https://sastps.github.io/PowerLink-Ghana-2050-GWE-Team-46/
+
+## Team
+
+**TechnoSaints Nexus**  
+Girls With Energy Challenge  
+PowerLink Ghana 2050
