@@ -1,127 +1,241 @@
 # PowerLink Ghana 2050 Command Center
 
-This repository hosts the PowerLink Ghana 2050 dashboard prototype for the Girls With Energy Challenge.
+The **PowerLink Ghana 2050 Command Center** is a dashboard prototype for the **Girls With Energy Challenge**. It is designed to show how a realistic Phase 1 clean-energy deployment could support the **Tamale–Savelugu Opportunity Corridor** in Northern Ghana.
 
-## Project Purpose
+This dashboard is not a national rollout model. It is sized to a realistic first-phase corridor deployment focused on reliability, community services, economic development, financial sustainability, safety, and workforce development.
 
-The PowerLink Ghana 2050 Command Center is a decision-support dashboard that shows how clean energy infrastructure can improve reliability, equity, resilience, affordability, sustainability, and implementation readiness.
+## Project Focus
 
-The dashboard supports a student energy strategy focused on solar generation, battery storage, microgrid resilience, smart monitoring, and community-centered planning.
+**Phase 1 Region:** Tamale–Savelugu Opportunity Corridor  
+**Project Type:** Solar + battery storage + smart monitoring + critical-load support  
+**Team:** TechnoSaints Nexus  
+**Challenge:** Girls With Energy Challenge  
+**Dashboard Purpose:** Measure whether the proposed energy system works technically, financially, and socially.
+
+## Why This Dashboard Matters
+
+Power generation is the output. Community impact is the outcome.
+
+The dashboard is built to answer questions like:
+
+- Is the system reliable?
+- Are clinics, schools, and water systems protected?
+- Are businesses and productive-use loads benefiting?
+- Is the system financially sustainable?
+- Are safety and cybersecurity risks being managed?
+- Is the project building local technical capacity?
+
+The guiding idea is:
+
+> If we cannot measure it, we cannot prove it worked — or improve it.
 
 ## Dashboard Screens
 
-The dashboard includes 10 screens:
+The dashboard includes the following screens:
 
-1. Home
-2. Live Operations
-3. Equity & Access
-4. Resilience
-5. Decision Support
-6. Map View
-7. Data Dictionary
-8. Scenario Comparison
-9. Implementation Roadmap
-10. About the System
+1. **Home Dashboard**
+2. **Live Operations**
+3. **Community Impact**
+4. **Economic Development**
+5. **Financial Sustainability**
+6. **Safety & Security**
+7. **Workforce Development**
+8. **Map View**
+9. **Data Dictionary**
+10. **Scenario Comparison**
+11. **About the System**
 
 ## KPI Framework
 
-The dashboard is organized around six core KPI families:
+The dashboard aligns with six project KPI families.
 
-### Energy Reliability
-Tracks whether the system delivers dependable electricity when and where it is needed.
+### 1. Energy & Reliability
 
-Example measures:
-- Critical load uptime
-- Battery autonomy
-- Solar output
+Measures whether the energy system is dependable and whether critical loads remain powered.
+
+Example metrics:
+
+- Solar energy generated
+- Battery state of charge
+- System uptime
+- Critical load availability
 - Outage hours avoided
-- Load served
+- Current load demand
 
-### Community Impact
-Measures how energy access improves health, education, water access, and productive use.
+### 2. Community Impact
 
-Example measures:
-- Clinics powered
-- Schools powered
-- Water access reliability
-- Evening study hours
-- Productive-use access
-- Rural communities served
+Measures how reliable electricity improves daily life and public services.
 
-### Safety & Resilience
-Measures whether the system operates safely and maintains continuity during stress events.
+Example metrics:
 
-Example measures:
-- Safety incidents
-- Weather readiness
-- Cybersecurity readiness
-- Backup hours remaining
-- Inspection completion
-- Restoration priority
+- Students served
+- Clinic service hours supported
+- Refrigeration availability
+- Households benefiting
+- Community satisfaction
+- Water systems supported
 
-### Cost & Financial Viability
-Tracks whether the solution can be funded, operated, scaled, and maintained.
+### 3. Economic Development
 
-Example measures:
-- CAPEX readiness
-- OPEX plan
-- Funding readiness
-- Maintenance reserve
-- Procurement readiness
-- Cost reduction potential
+Measures how energy access supports income, business activity, and productive use.
 
-### Environmental / SDG Impact
-Measures emissions avoided and alignment with Ghana’s development priorities.
+Example metrics:
 
-Example measures:
-- CO₂ avoided
-- Diesel avoided
-- Renewable share
-- SDG alignment
+- Businesses powered
+- Productive-use equipment hours
+- Cold storage utilization
+- Estimated income impact
+- Jobs created
+- Agro-processing sites supported
 
-### Implementation Readiness
-Tracks whether the proposal is realistic and executable.
+### 4. Financial Sustainability
 
-Example measures:
-- Site assessment
-- Permitting
-- Procurement
-- Training
-- O&M model
-- Risk register
+Measures whether the system can be funded, operated, maintained, and sustained.
 
-## Roadmap
+Example metrics:
 
-The strategy uses a three-phase roadmap:
+- Cost per kWh delivered
+- Revenue collection rate
+- Cost recovery
+- Maintenance cost trend
+- Funding leveraged
+- O&M reserve coverage
 
-### 0–3 Years | Pilot
-Prove the model through site selection, stakeholder engagement, financing, permitting, equipment procurement, contractor selection, and baseline KPI tracking.
+### 5. Safety & Security
 
-### 3–10 Years | Scale
-Replicate what works by expanding to additional schools, clinics, water systems, and productive-use loads.
+Measures whether the system protects people, equipment, data, and critical infrastructure.
 
-### 10+ Years | Sustain
-Build long-term energy independence through local ownership, maintenance reserves, technology refresh, compliance, and regional expansion.
+Example metrics:
+
+- Electrical safety incidents
+- Battery safety events
+- Cybersecurity alerts
+- Inspection compliance
+- Operator training completion
+- Emergency response target
+
+### 6. Workforce Development
+
+Measures whether the project builds local skills and long-term technical capacity.
+
+Example metrics:
+
+- Students trained
+- Women participating
+- Technical certifications earned
+- Local technicians trained
+- Community workshops
+- Training completion rate
+
+## Phase 1 Corridor Scope
+
+The dashboard is sized for a realistic Phase 1 deployment in the **Tamale–Savelugu Opportunity Corridor**.
+
+Example modeled Phase 1 scope:
+
+- 4 clinics or CHPS-related health service sites
+- 6 schools
+- 3 water systems
+- 28 businesses or productive-use users
+- 5 agro-processing or productive-use sites
+- 48 students or local participants trained
+- 12 local technicians trained
+- 1 corridor-scale smart monitoring dashboard
+
+## Phase 1 Budget Snapshot
+
+The dashboard uses a realistic corridor-scale budget rather than an inflated national-scale budget.
+
+### Base Phase 1 Budget
+
+**Total Base Budget:** `$18.5M`
+
+| Budget Category | Allocation | Purpose |
+|---|---:|---|
+| Solar generation + BOS | $5.2M | PV arrays, mounting, inverter systems, and electrical balance of system |
+| Battery storage | $4.1M | Battery systems, controls, and resilience reserve |
+| Distribution / interconnection | $2.3M | Distribution upgrades, wiring, and corridor connections |
+| Controls + monitoring + cyber | $1.2M | Smart monitoring, dashboard integration, and cybersecurity |
+| School / clinic / water upgrades | $2.6M | Priority-load infrastructure at corridor facilities |
+| Productive-use support | $1.3M | Cold storage, agro-processing, and microenterprise support |
+| Workforce development | $0.8M | Training, certifications, and community capacity |
+| Permitting / PM / contingency | $1.0M | Approvals, project management, and reserve contingency |
+
+### Climate Finance Upside
+
+The project can also show a potential climate-finance layer above the base budget.
+
+**Potential climate-finance upside:** `+$6.0M to +$7.5M`
+
+This additional funding could support:
+
+- Additional battery storage
+- Climate resilience upgrades
+- Emissions tracking
+- Adaptation planning
+- Expanded productive-use support
+- Longer-term monitoring and reporting
+
+## Map View
+
+The Map View represents an illustrative **Tamale–Savelugu Opportunity Corridor**.
+
+The map highlights:
+
+- Tamale hub
+- School + water cluster
+- Market / cold storage cluster
+- Savelugu CHPS / water node
+
+The map is meant to show a realistic first-phase deployment geography, not a full national grid map.
+
+## Scenario Comparison
+
+The dashboard compares three states:
+
+1. **Baseline**  
+   Conditions before meaningful corridor-scale intervention.
+
+2. **Current**  
+   Modeled early implementation status.
+
+3. **Phase 1 Target**  
+   Expected outcome after corridor implementation.
+
+Example comparison metrics:
+
+- System uptime
+- Critical load availability
+- Community benefit coverage
+- Business energy reliability
+- Workforce capacity readiness
 
 ## SDG Alignment
 
-The project supports:
+The project supports the following Sustainable Development Goals:
 
-- SDG 3: Good Health and Well-Being
-- SDG 4: Quality Education
-- SDG 6: Clean Water and Sanitation
-- SDG 7: Affordable and Clean Energy
-- SDG 8: Decent Work and Economic Growth
-- SDG 9: Industry, Innovation and Infrastructure
-- SDG 13: Climate Action
-- SDG 17: Partnerships for the Goals
+- **SDG 3:** Good Health and Well-Being
+- **SDG 4:** Quality Education
+- **SDG 6:** Clean Water and Sanitation
+- **SDG 7:** Affordable and Clean Energy
+- **SDG 8:** Decent Work and Economic Growth
+- **SDG 9:** Industry, Innovation, and Infrastructure
+- **SDG 13:** Climate Action
+- **SDG 17:** Partnerships for the Goals
 
-## Team
+## Technology
 
-TechnoSaints Nexus  
-Girls With Energy Challenge  
-PowerLink Ghana 2050
+This dashboard is built with:
 
-## Dashboard Tagline
+- HTML
+- CSS
+- JavaScript
+- GitHub Pages
 
-If we cannot measure it, we cannot prove it worked — or improve it.
+## Repository Files
+
+```text
+index.html
+style.css
+script.js
+README.md
